@@ -2,10 +2,8 @@ package org.hillel.it.yuzhanka.model.entity;
 
 import java.util.Date;
 
-public class Room {
-private int id;
-private Date createdAt;
-private User createdBy;
+public class Room extends BaseEntity {
+
 private boolean enabled;
 private int numberOfRoom;
 private int numberOfPlaces;

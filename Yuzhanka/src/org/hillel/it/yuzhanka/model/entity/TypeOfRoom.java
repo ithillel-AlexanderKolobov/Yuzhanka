@@ -2,10 +2,8 @@ package org.hillel.it.yuzhanka.model.entity;
 
 import java.util.Date;
 
-public class TypeOfRoom {
-	private int id;
-	private Date createdAt;
-	private User createdBy;
+public class TypeOfRoom extends BaseEntity {
+	
 	private String titleOfType;
 	private int numberOfPlaces;
 	private boolean waterCloset;

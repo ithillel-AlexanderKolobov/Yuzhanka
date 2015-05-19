@@ -12,7 +12,7 @@ private String linkToPhoto1;
 private String linkToPhoto2;
 private String linkToPhoto3;
 private String linkToPhoto4; // ссылки на фотографии лежащие на сервере
-private String linkToPhoto5;
+private String linkToPhoto5; // Сергей ребятам тоже так посоветовал
 private String linkToPhoto6;
 private String linkToPhoto7;
 private String linkToPhoto8;

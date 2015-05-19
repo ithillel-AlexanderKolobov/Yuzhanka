@@ -12,22 +12,19 @@ public class Reservation extends BaseEntity{
 	private User reservationOwner;
 	private float reservationCost;
 	private float reservationPrapaid;
-	private int prepaymentMethod; // 0 - наличные 1 - картой
-									// 2 - денежный перевод...
-	/* вынести в отдельный класс
-	private boolean prepaid;
-	private Date prepaymentDate;*/
-	
+	/* 
+	 * нужно наверно ввести такую переменную, 
+	 * чтобы система могла проверить не нужно-ли снимать предзаказ
+	 * по истечении времени X
+	 */
+	//boolean prepaided;
 	private String commentClient; // коментарий заказчика
 	private String commentManager; // коментарий менеджера
 	private Date arrivalDateTime;
-	private Date departureDateTime;
-	private float totalCost; // сумма за проживание
-	
-	/* тоже вынести в класс оплат
-	private float gotFromAmountOfStay;
-	private Date dateWhenAmountIsGot;
-	private int paymantMethod;// 0 - наличные 1 - картой
-								// 2 - денежный перевод...*/
-	
+	/*
+	 * еще наверно нужна переменная, что клиент заселился
+	 * иначе система должна напоминать позвонить ему.
+	 */
+	// boolean clientArrived;
+	private Date departureDateTime;		
 }

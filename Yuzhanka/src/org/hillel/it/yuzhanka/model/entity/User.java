@@ -1,5 +1,6 @@
 package org.hillel.it.yuzhanka.model.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User extends BaseEntity {
@@ -17,4 +18,5 @@ public class User extends BaseEntity {
 	private String homeAddress;
 	private String passportSerieAndNumber;
 	private String passportWhereAndWhenHanded;
+	private ArrayList<Payment>[] payments;
 }

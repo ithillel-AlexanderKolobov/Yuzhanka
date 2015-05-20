@@ -1,20 +1,57 @@
 package org.hillel.it.yuzhanka.model.entity;
 
+import java.util.Date;
+
 public class Payment extends BaseEntity{
 	private int paymentMethodId;// 0 - наличные 1 - картой через интернет 2-картой на месте  3 - денежный перевод...
 	private int amount;
 	private int currencyId;// 0-uah 1-usd 2-eur
-	//private User prepaydOwner;//как назвать?
+	private User client;//как назвать?
 	
+
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public User getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
+	}
 	public int getAmount() {
 		return amount;
+	}
+
+	public int getPaymentMethodId() {
+		return paymentMethodId;
+	}
+
+	public int getCurrencyId() {
+		return currencyId;
 	}
 
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 
-	public void setPaymentMethod(int paymentMethod) {
+	public User getClient() {
+		return client;
+	}
+
+	public void setClient(User client) {
+		this.client = client;
+	}
+
+	public void setPaymentMethodId(int paymentMethod) {
 		this.paymentMethodId = paymentMethod;
 	}
 

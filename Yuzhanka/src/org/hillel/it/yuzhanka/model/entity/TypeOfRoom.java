@@ -14,5 +14,25 @@ public class TypeOfRoom extends BaseEntity {
 	private String description; // Будет хранить статью с описанием.Возможно
 								// стоит вынести в отдельный тип.
 	private String linkToPhoto;
+	
+
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public User getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
+	}
 
 }

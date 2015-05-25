@@ -18,7 +18,7 @@ public class Reservation extends BaseEntity{
 	 * чтобы система могла проверить не нужно-ли снимать предзаказ
 	 * по истечении времени X
 	 */
-	//boolean prepaided;
+	boolean prepaided;
 	private String commentClient; // коментарий заказчика
 	private String commentManager; // коментарий менеджера
 	private Date arrivalDateTime;
@@ -26,7 +26,7 @@ public class Reservation extends BaseEntity{
 	 * еще наверно нужна переменная, что клиент заселился
 	 * иначе система должна напоминать позвонить ему.
 	 */
-	// boolean clientArrived;
+	boolean clientArrived;
 	private Date departureDateTime;		
 	
 

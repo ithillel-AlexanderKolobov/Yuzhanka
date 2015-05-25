@@ -5,9 +5,9 @@ import java.util.Date;
 public class Room extends BaseEntity {
 
 private boolean enabled;
-private int numberOfRoom;
-private int numberOfPlaces;
-private TypeOfRoom typeOfRoom;
+private int roomNumber;
+private int placesQuantiti;
+private RoomType roomType;
 private String linkToPhoto1;
 private String linkToPhoto2;
 private String linkToPhoto3;

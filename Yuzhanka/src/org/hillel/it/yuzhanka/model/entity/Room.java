@@ -5,9 +5,6 @@ import java.util.Date;
 public class Room extends BaseEntity {
 
 private boolean enabled;
-private int numberOfRoom;
-private int numberOfPlaces;
-private RoomType typeOfRoom;
 private int roomNumber;
 private int placesQuantiti;
 private RoomType roomType;

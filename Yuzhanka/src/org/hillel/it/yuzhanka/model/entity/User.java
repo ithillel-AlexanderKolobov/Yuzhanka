@@ -18,7 +18,7 @@ public class User extends BaseEntity {
 	private String homeAddress;
 	private String passportSerieAndNumber;
 	private String passportWhereAndWhenHanded;
-	private ArrayList<Payment>[] payments;
+	private ArrayList<Payment> payments;
 	
 
 	public int getId() {

@@ -7,7 +7,7 @@ public class Room extends BaseEntity {
 private boolean enabled;
 private int numberOfRoom;
 private int numberOfPlaces;
-private TypeOfRoom typeOfRoom;
+private RoomType typeOfRoom;
 private String linkToPhoto1;
 private String linkToPhoto2;
 private String linkToPhoto3;

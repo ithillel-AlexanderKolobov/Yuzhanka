@@ -8,5 +8,6 @@ public interface RoomTypeRepository
 	boolean addRoomType(RoomType roomType);
 	boolean changeRoomType(RoomType newRoomType);
 	boolean deleteRoomType(RoomType roomType);
+	RoomType getRoomTypeById(int id);
 
 }

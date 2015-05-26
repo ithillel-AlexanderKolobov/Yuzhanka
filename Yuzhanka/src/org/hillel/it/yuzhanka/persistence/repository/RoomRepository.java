@@ -1,5 +1,7 @@
 package org.hillel.it.yuzhanka.persistence.repository;
 
+import java.util.List;
+
 import org.hillel.it.yuzhanka.model.entity.Room;
 
 public interface RoomRepository
@@ -8,5 +10,6 @@ public interface RoomRepository
 	boolean changeRoom(Room newRoom);
 	boolean deleteRoom(Room room);
 	Room getRoomById(int id);
+	List <Room> getAllRooms();
 	
 }

@@ -7,5 +7,6 @@ public interface RoomRepository
 	boolean addRoom(Room room);
 	boolean changeRoom(Room newRoom);
 	boolean deleteRoom(Room room);
+	Room getRoomById(int id);
 	
 }

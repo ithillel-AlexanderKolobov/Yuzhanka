@@ -7,5 +7,6 @@ public interface UserRepository
 	boolean addUser(User user);
 	boolean changeUser(User newUser);
 	boolean deleteUser(User user);
+	User getUserById(int id);
 
 }

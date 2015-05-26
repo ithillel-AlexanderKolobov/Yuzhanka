@@ -8,5 +8,6 @@ public interface PaymentRepository
 	boolean addPayment(Payment payment);
 	boolean changePayment(Payment newPayment);
 	boolean deletePayment(Payment payment);
+	Payment getPaymentById(int id);
 
 }

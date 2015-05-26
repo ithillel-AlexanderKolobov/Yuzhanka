@@ -1,4 +1,4 @@
-package persistence.repository;
+package org.hillel.it.yuzhanka.persistence.repository;
 
 import org.hillel.it.yuzhanka.model.entity.Payment;
 import org.hillel.it.yuzhanka.model.entity.Room;

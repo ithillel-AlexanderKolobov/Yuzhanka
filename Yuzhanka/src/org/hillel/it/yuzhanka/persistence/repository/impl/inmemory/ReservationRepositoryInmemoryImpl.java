@@ -8,55 +8,79 @@ import org.hillel.it.yuzhanka.model.entity.Reservation;
 import org.hillel.it.yuzhanka.model.entity.User;
 import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 
-public class ReservationRepositoryInmemoryImpl implements ReservationRepository{
-	List<Reservation> reservationRepository=new ArrayList<>();
+public class ReservationRepositoryInmemoryImpl implements ReservationRepository {
+	List<Reservation> reservationRepository = new ArrayList<>();
 
-	@Override
 	public boolean addReservation(Reservation reservation) {
-		
+		if (reservationRepository.add(reservation)) {
+			return true;
+		}
 		return false;
 	}
 
-	@Override
 	public boolean deleteReservation(Reservation reservation) {
-		// TODO Auto-generated method stub
+		if (reservationRepository.remove(reservation)) {
+			return true;
+		}
 		return false;
 	}
 
-	@Override
-	public boolean changeReservation(Reservation newReservation) {
-		// TODO Auto-generated method stub
+	public boolean changeReservation(Reservation oldReservation,
+			Reservation newReservation) {
+		if (reservationRepository.remove(oldReservation)) {
+			if (reservationRepository.add(newReservation)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
-	@Override
 	public Reservation getById(int id) {
-		// TODO Auto-generated method stub
+		for (Reservation reservation : reservationRepository) {
+			if (reservation.getId() == id) {
+				return reservation;
+			}
+		}
 		return null;
 	}
 
-	@Override
-	public Reservation getByUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Reservation> getByOwner(User user) {
+		List<Reservation> reservationsList = new ArrayList<>();
+		for (Reservation reservation : reservationRepository) {
+			if (reservation.getOwner() == user) {
+				reservationsList.add(reservation);
+			}
+		}
+		return reservationsList;
 	}
 
-	@Override
 	public Reservation getByOrderClientFormat(String orderClientFormat) {
-		// TODO Auto-generated method stub
+		for (Reservation reservation : reservationRepository) {
+			if (reservation.getOrderClientFormat().equals(orderClientFormat)) {
+				return reservation;
+			}
+		}
 		return null;
 	}
 
-	@Override
+	
 	public List<Reservation> getByPeriod(Date start, Date end) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Reservation> reservationsList = new ArrayList<>();
+		for (Reservation reservation : reservationRepository) {
+			Date arrivalDate = reservation.getArrivalDateTime();
+			Date departureDate = reservation.getDepartureDateTime();
+			if ((arrivalDate.after(start) && arrivalDate.before(end))
+					|| (departureDate.after(start) && departureDate.before(end))
+					|| (arrivalDate.before(start) && departureDate.after(end))) {
+				reservationsList.add(reservation);
+			}
+		}
+		return reservationsList;
 	}
 
-	@Override
-	public List<Reservation> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public List<Reservation> getAll() {		
+		return reservationRepository;
 	}
 
 }

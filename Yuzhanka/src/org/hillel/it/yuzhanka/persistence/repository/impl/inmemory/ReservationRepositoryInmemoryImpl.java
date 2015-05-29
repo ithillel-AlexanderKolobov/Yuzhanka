@@ -12,27 +12,20 @@ public class ReservationRepositoryInmemoryImpl implements ReservationRepository 
 	List<Reservation> reservationRepository = new ArrayList<>();
 
 	public boolean addReservation(Reservation reservation) {
-		if (reservationRepository.add(reservation)) {
-			return true;
-		}
-		return false;
+		return reservationRepository.add(reservation);
 	}
 
 	public boolean deleteReservation(Reservation reservation) {
-		if (reservationRepository.remove(reservation)) {
-			return true;
-		}
-		return false;
+		return reservationRepository.remove(reservation);
 	}
 
 	public boolean changeReservation(Reservation oldReservation,
 			Reservation newReservation) {
 		if (reservationRepository.remove(oldReservation)) {
-			if (reservationRepository.add(newReservation)) {
-				return true;
-			}
+			return reservationRepository.add(newReservation);
 		}
 		return false;
+
 	}
 
 	public Reservation getById(int id) {
@@ -63,23 +56,23 @@ public class ReservationRepositoryInmemoryImpl implements ReservationRepository 
 		return null;
 	}
 
-	
-	public List<Reservation> getByPeriod(Date start, Date end) {
+	public List<Reservation> getActiveByPeriod(Date start, Date end) {
 		List<Reservation> reservationsList = new ArrayList<>();
 		for (Reservation reservation : reservationRepository) {
 			Date arrivalDate = reservation.getArrivalDateTime();
 			Date departureDate = reservation.getDepartureDateTime();
-			if ((arrivalDate.after(start) && arrivalDate.before(end))
-					|| (departureDate.after(start) && departureDate.before(end))
-					|| (arrivalDate.before(start) && departureDate.after(end))) {
+			if (reservation.isActive()
+					&& ((arrivalDate.after(start) && arrivalDate.before(end))
+							|| (departureDate.after(start) && departureDate
+									.before(end)) || (arrivalDate.before(start) && departureDate
+							.after(end)))) {
 				reservationsList.add(reservation);
 			}
 		}
 		return reservationsList;
 	}
 
-	
-	public List<Reservation> getAll() {		
+	public List<Reservation> getAll() {
 		return reservationRepository;
 	}
 

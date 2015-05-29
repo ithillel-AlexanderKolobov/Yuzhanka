@@ -35,6 +35,12 @@ public class Reservation extends BaseEntity{
 	public Date getCreatedAt() {
 		return createdAt;
 	}	
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 	public User getCreatedBy() {
 		return createdBy;
 	}

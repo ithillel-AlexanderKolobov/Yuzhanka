@@ -13,6 +13,6 @@ public interface ReservationRepository {
 	Reservation getById (int id);
 	List<Reservation> getByOwner (User user);
 	Reservation getByOrderClientFormat (String orderClientFormat);
-	List<Reservation> getByPeriod (Date start, Date end);
+	List<Reservation> getActiveByPeriod (Date start, Date end);
 	List<Reservation> getAll ();
 }

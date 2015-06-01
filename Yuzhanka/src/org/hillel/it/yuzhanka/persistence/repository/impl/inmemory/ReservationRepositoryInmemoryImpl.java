@@ -71,7 +71,8 @@ public class ReservationRepositoryInmemoryImpl implements ReservationRepository 
 			Date departureDate = reservation.getDepartureDateTime();
 			if ((arrivalDate.after(start) && arrivalDate.before(end))
 					|| (departureDate.after(start) && departureDate.before(end))
-					|| (arrivalDate.before(start) && departureDate.after(end))) {
+					|| (arrivalDate.before(start) && departureDate.after(end))) 
+			{
 				reservationsList.add(reservation);
 			}
 		}

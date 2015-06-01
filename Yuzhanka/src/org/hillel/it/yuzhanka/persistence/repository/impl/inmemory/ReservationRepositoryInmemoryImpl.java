@@ -9,7 +9,7 @@ import org.hillel.it.yuzhanka.model.entity.User;
 import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 
 public class ReservationRepositoryInmemoryImpl implements ReservationRepository {
-	List<Reservation> reservationRepository = new ArrayList<>();
+	List<Reservation> reservationRepository = new ArrayList<>();//переделать на hashmap
 
 	public boolean addReservation(Reservation reservation) {
 		return reservationRepository.add(reservation);

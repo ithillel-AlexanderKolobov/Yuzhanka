@@ -10,7 +10,7 @@ public class Reservation extends BaseEntity{
 	private ArrayList<Room> reservedRooms;
 	private String orderClientFormat; // что-бы номер был красивый дата+номер
 									// 20150417003
-	private User Owner;
+	private int ownerId;
 	private float Cost;
 	private float Prapaid;
 	/* 
@@ -53,8 +53,8 @@ public class Reservation extends BaseEntity{
 	public String getOrderClientFormat() {
 		return orderClientFormat;
 	}
-	public User getOwner() {
-		return Owner;
+	public int getOwner() {
+		return ownerId;
 	}
 	public void setArrivalDateTime(Date arrivalDateTime) {
 		this.arrivalDateTime = arrivalDateTime;
@@ -74,10 +74,8 @@ public class Reservation extends BaseEntity{
 	public void setOrderClientFormat(String orderClientFormat) {
 		this.orderClientFormat = orderClientFormat;
 	}
-	public void setOwner(User owner) {
-		Owner = owner;
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
 	}
-	public void setReservationOwner(User reservationOwner) {
-		this.Owner = reservationOwner;
-	}
+	
 }

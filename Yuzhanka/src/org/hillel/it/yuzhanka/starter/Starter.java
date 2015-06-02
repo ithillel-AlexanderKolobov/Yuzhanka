@@ -1,7 +1,7 @@
 package org.hillel.it.yuzhanka.starter;
 
 import org.hillel.it.yuzhanka.model.entity.Reservation;
-import org.hillel.it.yuzhanka.persistence.repository.impl.inmemory.ReservationRepositoryInmemoryImpl;
+import org.hillel.it.yuzhanka.persistence.repository.impl.inmemory.InMemoryReservationRepository;
 
 public class Starter {
 
@@ -12,11 +12,9 @@ public class Starter {
 		reservation2.setId(200);
 		Reservation reservation3 = new Reservation();
 		reservation1.setId(300);
-		ReservationRepositoryInmemoryImpl reservationRepositoryInmemoryImpl = new ReservationRepositoryInmemoryImpl();
-		reservationRepositoryInmemoryImpl.addReservation(reservation1);
-		reservationRepositoryInmemoryImpl.addReservation(reservation2);
-		System.out.println(reservationRepositoryInmemoryImpl.deleteReservation(reservation1));
-		System.out.println(reservationRepositoryInmemoryImpl.deleteReservation(reservation1));
+		InMemoryReservationRepository inmemoryReservationRepository = new InMemoryReservationRepository();
+		inmemoryReservationRepository.saveReservation(reservation1);
+		inmemoryReservationRepository.saveReservation(reservation2);		
 
 	}
 

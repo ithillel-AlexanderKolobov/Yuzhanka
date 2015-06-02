@@ -15,9 +15,9 @@ public class InMemoryReservationRepository implements ReservationRepository {
 
 	public void saveReservation(Reservation reservation) {
 		if (reservation.getId() == 0) {
-			reservation.setId(nextId);
-			nextId++;
+			reservation.setId(nextId);			
 			reservationRepository.put(nextId, reservation);
+			nextId++;
 		} else {
 			reservationRepository.replace(reservation.getId(), reservation);
 		}

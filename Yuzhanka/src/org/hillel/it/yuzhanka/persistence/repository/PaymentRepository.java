@@ -7,9 +7,8 @@ import org.hillel.it.yuzhanka.model.entity.Room;
 
 public interface PaymentRepository 
 {
-	boolean addPayment(Payment payment);
-	boolean changePayment(Payment newPayment);
-	boolean deletePayment(Payment payment);
+	void savePayment(Payment payment);
+	void deletePayment(Payment payment);
 	Payment getPaymentById(int id);
 	List<Payment> getAllPayments();
 

@@ -6,31 +6,50 @@ import java.util.List;
 import org.hillel.it.yuzhanka.model.entity.Room;
 import org.hillel.it.yuzhanka.persistence.repository.RoomRepository;
 
-public class RoomRepositoryInmemoryImpl implements RoomRepository
+public class InMemoryRoomRepository implements RoomRepository
 {
 	
 	List <Room> roomList = new ArrayList <Room>();
 
+	int nextId = 1;
+	
 	@Override
-	public boolean addRoom(Room room)
+	public void saveRoom(Room room)
 	{
-		return roomList.add(room);
-	}
 
-	@Override
-	public boolean changeRoom(Room oldRoom, Room newRoom) 
-	{
-		if(roomList.remove(oldRoom))
+		
+		if(room.getId() == 0)
 		{
-			return roomList.add(newRoom);
+			room.setId(nextId);
+			roomList.add(room);
+			nextId++;
 		}
-		return false;
+		else
+		{
+			for(Room currentRoom : roomList)
+			{
+				if(currentRoom.getId() == room.getId())
+				{
+					roomList.remove(currentRoom);
+					roomList.add(room);
+				}
+			}
+		}
+		
+		
 	}
 
+
 	@Override
-	public boolean deleteRoom(Room room) 
+	public void deleteRoom(int roomId) 
 	{
-		return roomList.remove(room);
+		for(Room room : roomList)
+		{
+			if(room.getId() == roomId)
+			{
+				roomList.remove(room);
+			}
+		}
 	}
 
 	@Override

@@ -4,15 +4,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.hillel.it.yuzhanka.model.entity.Reservation;
-import org.hillel.it.yuzhanka.model.entity.User;
 
 public interface ReservationRepository {
-	boolean addReservation(Reservation reservation);
-	boolean deleteReservation (Reservation reservation);
-	boolean changeReservation (Reservation oldReservation, Reservation newReservation);
+	void saveReservation(Reservation reservation);
+	void deleteReservation (Reservation reservation);
+	//boolean changeReservation (Reservation oldReservation, Reservation newReservation);
 	Reservation getById (int id);
-	List<Reservation> getByOwner (User user);
-	Reservation getByOrderClientFormat (String orderClientFormat);
-	List<Reservation> getActiveByPeriod (Date start, Date end);
-	List<Reservation> getAll ();
+	List<Reservation> findByOwnerId (int userId);
+	Reservation findByOrderClientFormat (String orderClientFormat);
+	List<Reservation> findActiveByPeriod (Date start, Date end);
+	List<Reservation> findAll ();
 }

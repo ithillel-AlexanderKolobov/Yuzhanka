@@ -24,15 +24,15 @@ public class RoomServiceImpl implements RoomService
 	}
 
 	@Override
-	public Room getRoomById(int id) {
+	public Room findRoomById(int id) {
 		
-		return repository.getRoomById(id);
+		return repository.findRoomById(id);
 	}
 
 	@Override
-	public List<Room> getAllRooms() {
+	public List<Room> findAllRooms() {
 		
-		return repository.getAllRooms();
+		return repository.findAllRooms();
 	}
 
 }

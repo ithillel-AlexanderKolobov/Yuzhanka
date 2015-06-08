@@ -48,7 +48,7 @@ public class InMemoryUserRepository implements UserRepository {
 	}
 
 	@Override
-	public List<User> getAllUsers() {
+	public List<User> findAllUsers() {
 		return userList;
 	}
 

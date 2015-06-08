@@ -6,7 +6,7 @@ import org.hillel.it.yuzhanka.model.entity.Payment;
 
 public interface PaymentService {
 	void savePayment(Payment payment);
-	void deletePayment(Payment payment);
+	void deletePayment(int paymentId);
 	Payment findPaymentById(int id);
 	List<Payment> getAllPayments();
 }

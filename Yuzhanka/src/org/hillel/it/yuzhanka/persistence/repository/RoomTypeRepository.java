@@ -11,6 +11,6 @@ public interface RoomTypeRepository {
 
 	RoomType findRoomTypeById(int id);
 
-	List<RoomType> getAllRoomTypes();
+	List<RoomType> findAllRoomTypes();
 
 }

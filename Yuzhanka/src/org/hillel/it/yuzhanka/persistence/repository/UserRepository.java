@@ -9,6 +9,6 @@ public interface UserRepository
 	void saveUser(User user);
 	void deleteUser(int userId);
 	User findUserById(int id);
-	List<User> getAllUsers();
+	List<User> findAllUsers();
 
 }

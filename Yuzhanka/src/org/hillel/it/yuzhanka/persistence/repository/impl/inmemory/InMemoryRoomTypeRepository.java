@@ -49,7 +49,7 @@ public class InMemoryRoomTypeRepository implements RoomTypeRepository {
 	}
 
 	@Override
-	public List<RoomType> getAllRoomTypes() {
+	public List<RoomType> findAllRoomTypes() {
 		return roomTypeList;
 	}
 

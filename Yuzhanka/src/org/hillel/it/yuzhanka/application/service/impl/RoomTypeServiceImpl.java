@@ -32,7 +32,7 @@ public class RoomTypeServiceImpl implements RoomTypeService {
 	@Override
 	public List<RoomType> getAllRoomTypes() {
 		
-		return repository.getAllRoomTypes();
+		return repository.findAllRoomTypes();
 	}
 
 }

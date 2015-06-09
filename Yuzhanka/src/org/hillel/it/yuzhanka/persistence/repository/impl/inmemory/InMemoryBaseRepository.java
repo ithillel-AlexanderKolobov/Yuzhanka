@@ -8,8 +8,8 @@ import java.util.Map;
 import org.hillel.it.yuzhanka.model.entity.Reservation;
 
 public class InMemoryBaseRepository {
-	Map<Integer, Reservation> storage = new HashMap<>();
-	int nextId = 1;
+	protected Map<Integer, Reservation> storage = new HashMap<>();
+	protected int nextId = 1;
 
 	public void save(Reservation reservation) {
 		if (reservation.getId() == 0) {

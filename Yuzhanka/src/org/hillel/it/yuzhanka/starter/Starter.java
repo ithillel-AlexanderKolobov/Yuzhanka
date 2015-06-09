@@ -22,7 +22,7 @@ public class Starter {
 		inmemoryReservationRepository.saveReservation(reservation4);
 		System.out.println(reservation4.getId());
 		Reservation newre=inmemoryReservationRepository.getById(3);
-		System.out.println(newre.getId());
+		System.out.println(newre.getId());		
 
 	}
 

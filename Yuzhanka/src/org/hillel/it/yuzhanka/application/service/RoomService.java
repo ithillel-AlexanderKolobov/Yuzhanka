@@ -8,7 +8,7 @@ public interface RoomService
 {
 	void saveRoom(Room room);
 	void deleteRoom(int roomId);
-	Room getRoomById(int id);
-	List <Room> getAllRooms();
+	Room findRoomById(int id);
+	List <Room> findAllRooms();
 
 }

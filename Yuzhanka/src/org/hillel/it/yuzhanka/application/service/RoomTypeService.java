@@ -1,16 +1,12 @@
-package org.hillel.it.yuzhanka.persistence.repository;
+package org.hillel.it.yuzhanka.application.service;
 
 import java.util.List;
 
 import org.hillel.it.yuzhanka.model.entity.RoomType;
 
-public interface RoomTypeRepository {
+public interface RoomTypeService {
 	void saveRoomType(RoomType roomType);
-
 	void deleteRoomType(int roomTypeId);
-
 	RoomType findRoomTypeById(int id);
-
-	List<RoomType> findAllRoomTypes();
-
+	List <RoomType> getAllRoomTypes();
 }

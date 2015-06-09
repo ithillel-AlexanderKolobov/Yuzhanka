@@ -11,13 +11,11 @@ public class InMemoryRoomRepository implements RoomRepository
 	
 	List <Room> roomList = new ArrayList <Room>();
 
-	int nextId = 1;
+	private int nextId = 1;
 	
 	@Override
 	public void saveRoom(Room room)
-	{
-
-		
+	{		
 		if(room.getId() == 0)
 		{
 			room.setId(nextId);
@@ -53,7 +51,7 @@ public class InMemoryRoomRepository implements RoomRepository
 	}
 
 	@Override
-	public Room getRoomById(int id)
+	public Room findRoomById(int id)
 	{
 		for(Room currentRoom : roomList)
 		{
@@ -66,7 +64,7 @@ public class InMemoryRoomRepository implements RoomRepository
 	}
 
 	@Override
-	public List<Room> getAllRooms()
+	public List<Room> findAllRooms()
 	{
 		
 		return roomList;

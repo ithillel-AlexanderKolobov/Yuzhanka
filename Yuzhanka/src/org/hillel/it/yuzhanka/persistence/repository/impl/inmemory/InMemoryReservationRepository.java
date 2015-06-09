@@ -3,33 +3,13 @@ package org.hillel.it.yuzhanka.persistence.repository.impl.inmemory;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import org.hillel.it.yuzhanka.model.entity.Reservation;
 import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 
-public class InMemoryReservationRepository extends InMemoryBaseRepository
+public class InMemoryReservationRepository extends InMemoryBaseRepository<Reservation>
 		implements ReservationRepository {
-	// Map<Integer, Reservation> reservationRepository = new HashMap<>();
-	// int nextId = 1;
-
-	public void save(Reservation reservation) {
-		if (reservation.getId() == 0) {
-			reservation.setId(nextId);
-			storage.put(nextId, reservation);
-			nextId++;
-		} else {
-			storage.replace(reservation.getId(), reservation);
-		}
-
-	}
-
-	public void delete(Reservation reservation) {
-		storage.remove(reservation.getId());
-	}
-
-	public Reservation getById(int id) {
-		return storage.get(id);
-	}
-
+	
 	public List<Reservation> findByOwnerId(int userId) {
 		List<Reservation> reservationsList = new ArrayList<>();
 		for (Reservation reservation : storage.values()) {
@@ -64,5 +44,5 @@ public class InMemoryReservationRepository extends InMemoryBaseRepository
 		}
 		return reservationsList;
 	}
-
+	
 }

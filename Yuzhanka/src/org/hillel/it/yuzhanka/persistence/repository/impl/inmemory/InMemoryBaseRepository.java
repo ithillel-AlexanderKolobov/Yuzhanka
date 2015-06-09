@@ -5,32 +5,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.hillel.it.yuzhanka.model.entity.Reservation;
+import org.hillel.it.yuzhanka.model.entity.BaseEntity;
 
-public class InMemoryBaseRepository {
-	protected Map<Integer, Reservation> storage = new HashMap<>();
+public class InMemoryBaseRepository<T extends BaseEntity> {
+	protected Map<Integer, T> storage = new HashMap<>();
 	protected int nextId = 1;
 
-	public void save(Reservation reservation) {
-		if (reservation.getId() == 0) {
-			reservation.setId(nextId);			
-			storage.put(nextId, reservation);
+	public void save(T entytiObject) {
+		if (entytiObject.getId() == 0) {
+			entytiObject.setId(nextId);			
+			storage.put(nextId, entytiObject);
 			nextId++;
 		} else {
-			storage.replace(reservation.getId(), reservation);
+			storage.replace(entytiObject.getId(), entytiObject);
 		}
 
 	}
 
-	public void delete(Reservation reservation) {
-		storage.remove(reservation.getId());
+	public void delete(T entytiObject) {
+		storage.remove(entytiObject.getId());
 	}
 
-	public Reservation getById(int id) {
+	public T getById(int id) {
 		return storage.get(id);
 	}
 	
-	public List<Reservation> findAll() {
+	public List<T> findAll() {
 		return new ArrayList<>(storage.values());
 	}
 }

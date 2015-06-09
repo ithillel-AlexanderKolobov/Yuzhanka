@@ -7,7 +7,7 @@ import java.util.Date;
 public class Reservation extends BaseEntity{
 	
 	private boolean active;
-	private ArrayList<Room> reservedRooms;
+	private ArrayList<Integer> reservedRoomsIds;
 	private String orderClientFormat; // что-бы номер был красивый дата+номер
 									// 20150417003
 	private int ownerId;

@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.hillel.it.yuzhanka.application.service.RoomService;
 import org.hillel.it.yuzhanka.model.entity.Room;
+import org.hillel.it.yuzhanka.persistence.repository.RoomRepository;
 
 public class RoomServiceImpl implements RoomService
 {
-	RoomRepository rooms = new RoomRepository(); 
+//RoomRepository rooms = new RoomRepository(); 
 
 	@Override
 	public void saveRoom(Room room)

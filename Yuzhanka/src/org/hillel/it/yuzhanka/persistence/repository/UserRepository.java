@@ -6,9 +6,9 @@ import org.hillel.it.yuzhanka.model.entity.User;
 
 public interface UserRepository 
 {
-	void saveUser(User user);
-	void deleteUser(int userId);
-	User findUserById(int id);
-	List<User> findAllUsers();
+	void save(User user);
+	void delete(User user);
+	User findById(int id);
+	List<User> findAll();
 
 }

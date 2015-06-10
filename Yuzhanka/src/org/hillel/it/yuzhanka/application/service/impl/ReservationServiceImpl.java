@@ -29,7 +29,7 @@ public class ReservationServiceImpl implements ReservationService
 	public Reservation getById(int id) 
 	{
 		
-		return repository.getById(id);
+		return repository.findById(id);
 	}
 
 	@Override

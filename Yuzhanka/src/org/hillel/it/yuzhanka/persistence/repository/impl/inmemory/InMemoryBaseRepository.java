@@ -26,7 +26,7 @@ public class InMemoryBaseRepository<T extends BaseEntity> {
 		storage.remove(entytiObject.getId());
 	}
 
-	public T getById(int id) {
+	public T findById(int id) {
 		return storage.get(id);
 	}
 	

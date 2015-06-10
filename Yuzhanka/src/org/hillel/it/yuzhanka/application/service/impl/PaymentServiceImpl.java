@@ -13,26 +13,26 @@ public class PaymentServiceImpl implements PaymentService {
 
 	@Override
 	public void savePayment(Payment payment) {
-		repository.savePayment(payment);
+		repository.save(payment);
 
 	}
 
 	@Override
-	public void deletePayment(int paymentId) {
-		repository.deletePayment(paymentId);
+	public void deletePayment(Payment payment) {
+		repository.delete(payment);
 
 	}
 
 	@Override
 	public Payment findPaymentById(int id) {
 
-		return repository.findPaymentById(id);
+		return repository.findById(id);
 	}
 
 	@Override
 	public List<Payment> getAllPayments() {
 
-		return repository.findAllPayments();
+		return repository.findAll();
 	}
 
 }

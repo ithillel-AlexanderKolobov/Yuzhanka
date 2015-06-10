@@ -12,7 +12,7 @@ public interface ReservationRepository {
 
 	// boolean changeReservation (Reservation oldReservation, Reservation
 	// newReservation);
-	Reservation getById(int id);
+	Reservation findById(int id);
 
 	List<Reservation> findByOwnerId(int userId);
 

@@ -21,7 +21,7 @@ public class Starter {
 		Reservation reservation4 = new Reservation();
 		inmemoryReservationRepository.save(reservation4);
 		System.out.println(reservation4.getId());
-		Reservation newre=inmemoryReservationRepository.getById(3);
+		Reservation newre=inmemoryReservationRepository.findById(3);
 		System.out.println(newre.getId());		
 
 	}

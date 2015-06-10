@@ -5,12 +5,12 @@ import java.util.List;
 import org.hillel.it.yuzhanka.model.entity.RoomType;
 
 public interface RoomTypeRepository {
-	void saveRoomType(RoomType roomType);
+	void save(RoomType roomType);
 
-	void deleteRoomType(int roomTypeId);
+	void delete(RoomType roomType);
 
-	RoomType findRoomTypeById(int id);
+	RoomType findById(int id);
 
-	List<RoomType> findAllRoomTypes();
+	List<RoomType> findAll();
 
 }

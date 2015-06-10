@@ -14,25 +14,25 @@ public class RoomServiceImpl implements RoomService
 	@Override
 	public void saveRoom(Room room)
 	{
-		repository.saveRoom(room);	
+		repository.save(room);	
 	}
 
 	@Override
-	public void deleteRoom(int roomId)
+	public void deleteRoom(Room room)
 	{
-		repository.deleteRoom(roomId);
+		repository.delete(room);
 	}
 
 	@Override
 	public Room findRoomById(int id) {
 		
-		return repository.findRoomById(id);
+		return repository.findById(id);
 	}
 
 	@Override
 	public List<Room> findAllRooms() {
 		
-		return repository.findAllRooms();
+		return repository.findAll();
 	}
 
 }

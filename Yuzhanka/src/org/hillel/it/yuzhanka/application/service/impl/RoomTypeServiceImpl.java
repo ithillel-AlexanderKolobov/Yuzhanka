@@ -12,25 +12,25 @@ public class RoomTypeServiceImpl implements RoomTypeService {
 	RoomTypeRepository repository = new InMemoryRoomTypeRepository();
 
 	@Override
-	public void saveRoomType(RoomType roomType) {
+	public void save(RoomType roomType) {
 		repository.save(roomType);
 
 	}
 
 	@Override
-	public void deleteRoomType(RoomType roomType) {
+	public void delete(RoomType roomType) {
 		repository.delete(roomType);
 
 	}
 
 	@Override
-	public RoomType findRoomTypeById(int id) {
+	public RoomType findById(int id) {
 		
 		return repository.findById(id);
 	}
 
 	@Override
-	public List<RoomType> getAllRoomTypes() {
+	public List<RoomType> findAll() {
 		
 		return repository.findAll();
 	}

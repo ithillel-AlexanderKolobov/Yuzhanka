@@ -13,20 +13,20 @@ public class ReservationServiceImpl implements ReservationService
 	ReservationRepository repository = new InMemoryReservationRepository();
 
 	@Override
-	public void saveReservation(Reservation reservation)
+	public void save(Reservation reservation)
 	{
 		repository.save(reservation);
 		
 	}
 
 	@Override
-	public void deleteReservation(Reservation reservation)
+	public void delete(Reservation reservation)
 	{
 			repository.delete(reservation);
 	}
 
 	@Override
-	public Reservation getById(int id) 
+	public Reservation findById(int id) 
 	{
 		
 		return repository.findById(id);

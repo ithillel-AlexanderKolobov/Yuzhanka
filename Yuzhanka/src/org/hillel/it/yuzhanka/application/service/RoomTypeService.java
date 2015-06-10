@@ -5,8 +5,8 @@ import java.util.List;
 import org.hillel.it.yuzhanka.model.entity.RoomType;
 
 public interface RoomTypeService {
-	void saveRoomType(RoomType roomType);
-	void deleteRoomType(RoomType roomType);
-	RoomType findRoomTypeById(int id);
-	List <RoomType> getAllRoomTypes();
+	void save(RoomType roomType);
+	void delete(RoomType roomType);
+	RoomType findById(int id);
+	List <RoomType> findAll();
 }

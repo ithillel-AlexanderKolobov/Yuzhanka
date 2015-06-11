@@ -12,25 +12,25 @@ public class PaymentServiceImpl implements PaymentService {
 	PaymentRepository repository = new InMemoryPaymentRepository();
 
 	@Override
-	public void savePayment(Payment payment) {
+	public void save(Payment payment) {
 		repository.save(payment);
 
 	}
 
 	@Override
-	public void deletePayment(Payment payment) {
+	public void delete(Payment payment) {
 		repository.delete(payment);
 
 	}
 
 	@Override
-	public Payment findPaymentById(int id) {
+	public Payment findById(int id) {
 
 		return repository.findById(id);
 	}
 
 	@Override
-	public List<Payment> getAllPayments() {
+	public List<Payment> findAll() {
 
 		return repository.findAll();
 	}

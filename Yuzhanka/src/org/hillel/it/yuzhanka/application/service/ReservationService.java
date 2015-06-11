@@ -8,9 +8,9 @@ import org.hillel.it.yuzhanka.model.entity.Reservation;
 
 public interface ReservationService 
 {
-	 void saveReservation(Reservation reservation);
-	 void deleteReservation(Reservation reservation);
-	 Reservation getById (int id);
+	 void save(Reservation reservation);
+	 void delete(Reservation reservation);
+	 Reservation findById (int id);
 	 List<Reservation> findByOwnerId (int userId);
 	 Reservation findByOrderClientFormat (String orderClientFormat);
 	 List<Reservation> findActiveByPeriod (Date start, Date end);

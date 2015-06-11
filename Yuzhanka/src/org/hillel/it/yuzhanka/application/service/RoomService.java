@@ -7,8 +7,8 @@ import org.hillel.it.yuzhanka.model.entity.Room;
 public interface RoomService 
 {
 	void saveRoom(Room room);
-	void deleteRoom(int roomId);
-	Room getRoomById(int id);
-	List <Room> getAllRooms();
+	void deleteRoom(Room room);
+	Room findRoomById(int id);
+	List <Room> findAllRooms();
 
 }

@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.hillel.it.yuzhanka.model.entity.Reservation;
-import org.hillel.it.yuzhanka.model.entity.User;
+
 
 public interface ReservationService 
 {

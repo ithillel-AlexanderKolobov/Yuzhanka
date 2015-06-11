@@ -7,7 +7,7 @@ import java.util.Date;
 public class Reservation extends BaseEntity{
 	
 	private boolean active;
-	private ArrayList<Room> reservedRooms;
+	private ArrayList<Integer> reservedRoomsIds;
 	private String orderClientFormat; // что-бы номер был красивый дата+номер
 									// 20150417003
 	private int ownerId;
@@ -31,25 +31,16 @@ public class Reservation extends BaseEntity{
 	
 	public Date getArrivalDateTime() {
 		return arrivalDateTime;
-	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}	
+	}		
 	public boolean isActive() {
 		return active;
 	}
 	public void setActive(boolean active) {
 		this.active = active;
-	}
-	public User getCreatedBy() {
-		return createdBy;
-	}
+	}	
 	public Date getDepartureDateTime() {
 		return departureDateTime;
-	}
-	public int getId() {
-		return id;
-	}
+	}	
 	public String getOrderClientFormat() {
 		return orderClientFormat;
 	}
@@ -58,19 +49,10 @@ public class Reservation extends BaseEntity{
 	}
 	public void setArrivalDateTime(Date arrivalDateTime) {
 		this.arrivalDateTime = arrivalDateTime;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public void setCreatedBy(User createdBy) {
-		this.createdBy = createdBy;
-	}
+	}	
 	public void setDepartureDateTime(Date departureDateTime) {
 		this.departureDateTime = departureDateTime;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	}	
 	public void setOrderClientFormat(String orderClientFormat) {
 		this.orderClientFormat = orderClientFormat;
 	}

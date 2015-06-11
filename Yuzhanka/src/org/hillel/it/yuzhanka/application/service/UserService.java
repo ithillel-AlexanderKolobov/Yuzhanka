@@ -1,11 +1,10 @@
-package org.hillel.it.yuzhanka.persistence.repository;
+package org.hillel.it.yuzhanka.application.service;
 
 import java.util.List;
 
 import org.hillel.it.yuzhanka.model.entity.User;
 
-public interface UserRepository 
-{
+public interface UserService {
 	void save(User user);
 	void delete(User user);
 	User findById(int id);

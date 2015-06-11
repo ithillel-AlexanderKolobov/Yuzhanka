@@ -8,25 +8,7 @@ public class Payment extends BaseEntity{
 	private int currencyId;// 0-uah 1-usd 2-eur
 	private User client;//как назвать?
 	
-
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public User getCreatedBy() {
-		return createdBy;
-	}
-	public void setCreatedBy(User createdBy) {
-		this.createdBy = createdBy;
-	}
+		
 	public int getAmount() {
 		return amount;
 	}

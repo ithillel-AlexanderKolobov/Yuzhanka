@@ -6,31 +6,32 @@ import org.hillel.it.yuzhanka.application.service.RoomService;
 import org.hillel.it.yuzhanka.model.entity.Room;
 import org.hillel.it.yuzhanka.persistence.repository.RoomRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.inmemory.InMemoryRoomRepository;
-
 public class RoomServiceImpl implements RoomService
 {
+
+//RoomRepository rooms = new RoomRepository(); 
 	RoomRepository repository = new InMemoryRoomRepository(); 
 
 	@Override
-	public void saveRoom(Room room)
+	public void save(Room room)
 	{
 		repository.save(room);	
 	}
 
 	@Override
-	public void deleteRoom(Room room)
+	public void delete(Room room)
 	{
 		repository.delete(room);
 	}
 
 	@Override
-	public Room findRoomById(int id) {
+	public Room findById(int id) {
 		
 		return repository.findById(id);
 	}
 
 	@Override
-	public List<Room> findAllRooms() {
+	public List<Room> findAll() {
 		
 		return repository.findAll();
 	}

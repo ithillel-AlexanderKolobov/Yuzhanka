@@ -1,11 +1,19 @@
 package org.hillel.it.yuzhanka.model.entity;
 
-import java.util.Date;
+/**
+ * Entity that form bill and way of payment
+ * @author Лаборант
+ *
+ */
 
 public class Payment extends BaseEntity{
+	
 	private int paymentMethodId;// 0 - наличные 1 - картой через интернет 2-картой на месте  3 - денежный перевод...
+	
 	private int amount;
+	
 	private int currencyId;// 0-uah 1-usd 2-eur
+	
 	private User client;//как назвать?
 	
 	

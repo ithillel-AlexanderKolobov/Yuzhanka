@@ -3,7 +3,11 @@ package org.hillel.it.yuzhanka.model.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * Person can reserve any room for any period
+ * @author Лаборант
+ *
+ */
 public class Reservation extends BaseEntity{
 	
 	private boolean active;

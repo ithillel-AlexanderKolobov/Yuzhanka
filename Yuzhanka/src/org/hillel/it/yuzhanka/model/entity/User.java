@@ -3,8 +3,14 @@ package org.hillel.it.yuzhanka.model.entity;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Entity ithat represent user of the application
+ * 
+ * @author Лаборант
+ *
+ */
 public class User extends BaseEntity {
-	
+
 	private String email; // обязательное поле. Должно сохранять уникальность.
 							// Будет использоваться для авторизации
 	private String password; // скорее всего HASH а не сам пароль. Если человек
@@ -19,7 +25,7 @@ public class User extends BaseEntity {
 	private String passportSerieAndNumber;
 	private String passportWhereAndWhenHanded;
 	private ArrayList<Payment> payments;
-	
+
 	
 	public User(String email, String password, String lastName,
 			String firstName, String patronymic, Date dateOfBirdh,
@@ -98,4 +104,5 @@ public class User extends BaseEntity {
 	}
 	
 	
+
 }

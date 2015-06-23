@@ -1,4 +1,4 @@
-package org.hillel.it.yuzhanka.test;
+package car;
 
 import static org.junit.Assert.*;
 

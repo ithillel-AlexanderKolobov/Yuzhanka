@@ -16,7 +16,17 @@ public class Payment extends BaseEntity{
 	
 	private User client;//как назвать?
 	
+	
+	
+	
 		
+	public Payment(int paymentMethodId, int amount, int currencyId, User client) {
+		this.paymentMethodId = paymentMethodId;
+		this.amount = amount;
+		this.currencyId = currencyId;
+		this.client = client;
+	}
+
 	public int getAmount() {
 		return amount;
 	}

@@ -13,13 +13,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class PaymentServiceImplTest {
-	private PaymentService repository = null;
-	private Payment payment = null;
-	private Payment payment1 = null;
-	private Payment payment2 = null;
+	private PaymentService repository;
+	private Payment payment;
+	private Payment payment1;
+	private Payment payment2;
 
 	@Before
-	public void setUp() {
+	public void setup() {
 		repository = new PaymentServiceImpl();
 
 		User client = new User("t@ukr.net", "12345", "Voronova", "Valentina",
@@ -56,7 +56,6 @@ public class PaymentServiceImplTest {
 		repository.save(payment);
 		repository.save(payment1);
 		repository.save(payment2);
-		System.out.println(repository.findById(3).getId());
 		assertEquals(repository.findById(3).getAmount(), 4000);
 	}
 

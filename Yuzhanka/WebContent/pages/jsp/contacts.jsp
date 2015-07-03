@@ -8,14 +8,9 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<ul id="menu">
-		<li><a href="index.jsp">Главная</a></li>
-		<li><a href="allrooms.jsp">Все номера</a></li>
-		<li><a href="book.jsp">Забронировать</a></li>
-		<li><a href="contacts.jsp">Контакты</a></li>
-		<li><a href="login.jsp">Войти</a></li>
-	</ul>
+	<%@include file="header.jsp" %>
 
 	Здесь наши контакты, карта
+	<%@include file="footer.jsp" %>
 </body>
 </html>

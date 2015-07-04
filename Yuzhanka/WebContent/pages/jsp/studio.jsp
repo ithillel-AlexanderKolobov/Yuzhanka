@@ -8,15 +8,13 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<ul id="menu">
-		<li><a href="index.html">Главная</a></li>
-		<li><a href="allrooms.html">Все номера</a></li>
-		<li><a href="book.html">Забронировать</a></li>
-		<li><a href="contacts.html">Контакты</a></li>
-		<li><a href="login.html">Войти</a></li>
-	</ul>
-	список всех одноместных номеров, на отельный номер можно зайти,
-	прочитать все о нем, забронировать. Для зарегестрировшихся
-	пользователей - написать отзыв
+	<%@include file="header.jsp"%>
+
+	<p>список всех одноместных номеров, на отельный номер можно зайти,
+		прочитать все о нем, забронировать. Для зарегестрировшихся
+		пользователей - написать отзыв</p>
+
+	<%@include file="footer.jsp"%>
+
 </body>
 </html>

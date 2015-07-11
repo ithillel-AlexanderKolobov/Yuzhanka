@@ -15,19 +15,27 @@ import org.hillel.it.yuzhanka.model.entity.RoomType;
 import org.hillel.it.yuzhanka.model.entity.User;
 
 public class FileRepository {
-	FilePaymentRepository paymentRepository;
-	FileReservationRepository reservationRepository;
-	FileRoomRepository roomRepository;
-	FileRoomTypeRepository roomTypeRepository;
-	FileUserRepository userRepository;
+	private static FileRepository instance;
+	private FilePaymentRepository paymentRepository;
+	private FileReservationRepository reservationRepository;
+	private FileRoomRepository roomRepository;
+	private FileRoomTypeRepository roomTypeRepository;
+	private FileUserRepository userRepository;
 
-	public FileRepository() {
+	protected FileRepository() {
 		paymentRepository = new FilePaymentRepository();
 		reservationRepository = new FileReservationRepository();
 		roomRepository = new FileRoomRepository();
 		roomTypeRepository = new FileRoomTypeRepository();
 		userRepository = new FileUserRepository();
 		deserialize();
+	}
+
+	public static FileRepository getInstance() {
+		if (instance == null) {
+			instance = new FileRepository();
+		}
+		return instance;
 	}
 
 	public void serialize() {
@@ -47,7 +55,7 @@ public class FileRepository {
 
 	public void deserialize() {
 		try (FileInputStream fis = new FileInputStream("resources/filerepository.bin");
-				ObjectInputStream ois = new ObjectInputStream(fis)){
+				ObjectInputStream ois = new ObjectInputStream(fis)) {
 			paymentRepository.setStorage((HashMap<Integer, Payment>) ois.readObject());
 			reservationRepository.setStorage((HashMap<Integer, Reservation>) ois.readObject());
 			roomRepository.setStorage((HashMap<Integer, Room>) ois.readObject());
@@ -55,18 +63,39 @@ public class FileRepository {
 			userRepository.setStorage((HashMap<Integer, User>) ois.readObject());
 		} catch (FileNotFoundException e) {
 			paymentRepository.setStorage(new HashMap<Integer, Payment>());
-			reservationRepository.setStorage(new HashMap<Integer,Reservation >());
+			reservationRepository.setStorage(new HashMap<Integer, Reservation>());
 			roomRepository.setStorage(new HashMap<Integer, Room>());
 			roomTypeRepository.setStorage(new HashMap<Integer, RoomType>());
-			userRepository.setStorage(new HashMap<Integer, User>());			
-			
+			userRepository.setStorage(new HashMap<Integer, User>());
+
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		}
 	}
+
+	public FilePaymentRepository getPaymentRepository() {
+		return paymentRepository;
+	}
+
+	public FileReservationRepository getReservationRepository() {
+		return reservationRepository;
+	}
+
+	public FileRoomRepository getRoomRepository() {
+		return roomRepository;
+	}
+
+	public FileRoomTypeRepository getRoomTypeRepository() {
+		return roomTypeRepository;
+	}
+
+	public FileUserRepository getUserRepository() {
+		return userRepository;
+	}
+	
 
 }

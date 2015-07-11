@@ -41,6 +41,10 @@ public class User extends BaseEntity {
 		this.homeAddress = homeAddress;
 		this.passportSerieAndNumber = passportSerieAndNumber;
 		this.passportWhereAndWhenHanded = passportWhereAndWhenHanded;
+		payments = new ArrayList<>();
+	}
+	public User(){
+		payments = new ArrayList<>();
 	}
 	public String getEmail() {
 		return email;

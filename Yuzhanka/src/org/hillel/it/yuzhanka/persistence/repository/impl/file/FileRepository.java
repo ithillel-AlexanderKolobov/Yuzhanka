@@ -28,11 +28,14 @@ public class FileRepository {
 		roomRepository = new FileRoomRepository();
 		roomTypeRepository = new FileRoomTypeRepository();
 		userRepository = new FileUserRepository();
-		deserialize();
+		deserialize();		
+	}
+	protected FileRepository(int number){
+		
 	}
 
 	public static FileRepository getInstance() {
-		if (instance == null) {
+		if (instance == null) {			
 			instance = new FileRepository();
 		}
 		return instance;
@@ -40,13 +43,13 @@ public class FileRepository {
 
 	public void serialize() {
 
-		try (FileOutputStream fos = new FileOutputStream("resources/filerepository.bin");
+		try (FileOutputStream fos = new FileOutputStream("filerepository.bin");
 				ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 			oos.writeObject(paymentRepository.getStorage());
 			oos.writeObject(reservationRepository.getStorage());
 			oos.writeObject(roomRepository.getStorage());
 			oos.writeObject(roomTypeRepository.getStorage());
-			oos.writeObject(userRepository.getStorage());
+			oos.writeObject(userRepository.getStorage());			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -54,7 +57,7 @@ public class FileRepository {
 	}
 
 	public void deserialize() {
-		try (FileInputStream fis = new FileInputStream("resources/filerepository.bin");
+		try (FileInputStream fis = new FileInputStream("filerepository.bin");
 				ObjectInputStream ois = new ObjectInputStream(fis)) {
 			paymentRepository.setStorage((HashMap<Integer, Payment>) ois.readObject());
 			reservationRepository.setStorage((HashMap<Integer, Reservation>) ois.readObject());
@@ -62,6 +65,7 @@ public class FileRepository {
 			roomTypeRepository.setStorage((HashMap<Integer, RoomType>) ois.readObject());
 			userRepository.setStorage((HashMap<Integer, User>) ois.readObject());
 		} catch (FileNotFoundException e) {
+			System.out.println("тута");
 			paymentRepository.setStorage(new HashMap<Integer, Payment>());
 			reservationRepository.setStorage(new HashMap<Integer, Reservation>());
 			roomRepository.setStorage(new HashMap<Integer, Room>());

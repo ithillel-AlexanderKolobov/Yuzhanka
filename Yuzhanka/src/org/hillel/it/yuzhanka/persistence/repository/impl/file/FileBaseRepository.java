@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import org.hillel.it.yuzhanka.model.entity.BaseEntity;
 
-public abstract class FileBaseRepository<T extends BaseEntity> extends FileRepository {
+public abstract class FileBaseRepository<T extends BaseEntity> {
+		
 	protected HashMap<Integer, T> storage;
 	protected int nextId = 1;
 
@@ -16,14 +17,14 @@ public abstract class FileBaseRepository<T extends BaseEntity> extends FileRepos
 			nextId++;
 		} else {
 			storage.replace(entytiObject.getId(), entytiObject);
-		}
-		super.serialize();
-
+		}	
+		FileRepository.getInstance().serialize();
+		
 	}
 
 	public void delete(T entytiObject) {
 		storage.remove(entytiObject.getId());
-		super.serialize();
+		FileRepository.getInstance().serialize();
 	}
 
 	public T findById(int id) {

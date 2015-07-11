@@ -26,6 +26,9 @@ public class Payment extends BaseEntity{
 		this.currencyId = currencyId;
 		this.client = client;
 	}
+	public Payment(){
+		
+	}
 
 	public int getAmount() {
 		return amount;

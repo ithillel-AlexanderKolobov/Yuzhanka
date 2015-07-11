@@ -4,13 +4,16 @@ import java.util.List;
 
 import org.hillel.it.yuzhanka.application.service.RoomService;
 import org.hillel.it.yuzhanka.model.entity.Room;
+import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 import org.hillel.it.yuzhanka.persistence.repository.RoomRepository;
+import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.inmemory.InMemoryRoomRepository;
 public class RoomServiceImpl implements RoomService
 {
 
 //RoomRepository rooms = new RoomRepository(); 
-	RoomRepository repository = new InMemoryRoomRepository(); 
+	//RoomRepository repository = new InMemoryRoomRepository();
+	RoomRepository repository = FileRepository.getInstance().getRoomRepository();
 
 	@Override
 	public void save(Room room)

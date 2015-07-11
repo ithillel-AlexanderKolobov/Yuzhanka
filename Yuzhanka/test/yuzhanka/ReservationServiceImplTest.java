@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package yuzhanka;
 
 import org.hillel.it.yuzhanka.application.service.ReservationService;
@@ -13,7 +13,7 @@ public void setup() {
 	service = new ReservationServiceImpl();
 }
 }
-=======
+
 
 package yuzhanka;
 
@@ -39,4 +39,3 @@ public void testSaveFirstNewReservation(){
 }
 }
 
->>>>>>> branch 'master' of https://github.com/ithillel/Yuzhanka.git

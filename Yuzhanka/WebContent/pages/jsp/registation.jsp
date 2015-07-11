@@ -8,13 +8,7 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<ul id="menu">
-		<li><a href="index.html">Главная</a></li>
-		<li><a href="allrooms.html">Все номера</a></li>
-		<li><a href="book.html">Забронировать</a></li>
-		<li><a href="contacts.html">Контакты</a></li>
-		<li><a href="login.html">Войти</a></li>
-	</ul>
+	<%@include file="header.jsp"%>
 
 	<form method="post">
 
@@ -67,5 +61,7 @@
 		</table>
 
 	</form>
+
+	<%@include file="footer.jsp"%>
 </body>
 </html>

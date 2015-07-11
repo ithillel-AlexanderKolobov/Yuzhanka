@@ -28,5 +28,6 @@
 			id="imgroom" src="images/studio.jpg"></a> <a href="onebedroom.jsp"><img
 			id="imgroom" src="images/onebedroom.jpg"></a>
 	</div>
+
 </body>
 </html>

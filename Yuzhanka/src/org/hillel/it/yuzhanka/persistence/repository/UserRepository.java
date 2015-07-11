@@ -10,5 +10,7 @@ public interface UserRepository
 	void delete(User user);
 	User findById(int id);
 	List<User> findAll();
+	User findByEmail(String email);
+	
 
 }

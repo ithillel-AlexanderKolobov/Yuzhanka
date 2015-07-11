@@ -10,7 +10,7 @@
 <body>
 	<%@include file="header.jsp"%>
 
-	<form method="post">
+	<form method="post" action="checker.jsp">
 
 		<table>
 			<tr>
@@ -55,7 +55,7 @@
 			<tr>
 				<td></td>
 				<td align="right">
-					<button type="submit">Отправить</button>
+					<button type="submit" value="Go">Отправить</button>
 				</td>
 			</tr>
 		</table>

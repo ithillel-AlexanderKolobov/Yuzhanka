@@ -5,11 +5,13 @@ import java.util.List;
 import org.hillel.it.yuzhanka.application.service.PaymentService;
 import org.hillel.it.yuzhanka.model.entity.Payment;
 import org.hillel.it.yuzhanka.persistence.repository.PaymentRepository;
+import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.inmemory.InMemoryPaymentRepository;
 
 
 public class PaymentServiceImpl implements PaymentService {
 	PaymentRepository repository = new InMemoryPaymentRepository();
+	//PaymentRepository repository = FileRepository.getInstance.getPaymantReposytory;
 
 	@Override
 	public void save(Payment payment) {

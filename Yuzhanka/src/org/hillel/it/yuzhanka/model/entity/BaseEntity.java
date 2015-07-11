@@ -1,5 +1,6 @@
 package org.hillel.it.yuzhanka.model.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,13 @@ import java.util.Date;
  * @author Лаборант
  *
  */
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Unique entity identifier
 	 */

@@ -2,6 +2,9 @@ package yuzhanka;
 
 import static org.junit.Assert.*;
 
+import org.hillel.it.yuzhanka.model.enums.Currency;
+import org.hillel.it.yuzhanka.model.enums.PaymentMethod;
+
 import java.util.Date;
 import java.util.List;
 
@@ -24,10 +27,11 @@ public class PaymentServiceImplTest {
 
 		User client = new User("t@ukr.net", "12345", "Voronova", "Valentina",
 				"Vya4eslavovna", new Date(), "odessa", "kw1234", "umvs");
+		
+		payment = new Payment(PaymentMethod.CASH, 1000, Currency.UAH , client);
+		payment1 = new Payment(PaymentMethod.CASH, 2000, Currency.UAH , client);
+		payment2 = new Payment(PaymentMethod.CASH, 3000, Currency.UAH , client);
 
-		payment = new Payment(0, 2000, 0, client);
-		payment1 = new Payment(0, 3000, 0, client);
-		payment2 = new Payment(0, 4000, 0, client);
 	}
 
 	@Test

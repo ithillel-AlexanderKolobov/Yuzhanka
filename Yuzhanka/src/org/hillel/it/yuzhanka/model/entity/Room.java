@@ -33,11 +33,11 @@ public int getRoomNumber() {
 public void setRoomNumber(int roomNumber) {
 	this.roomNumber = roomNumber;
 }
-public int getPlacesQuantiti() {
-	return placesQuantiti;
+public int getPlacesQuantity() {
+	return placesQuantity;
 }
-public void setPlacesQuantiti(int placesQuantiti) {
-	this.placesQuantiti = placesQuantiti;
+public void setPlacesQuantity(int placesQuantity) {
+	this.placesQuantity = placesQuantity;
 }
 public RoomType getRoomType() {
 	return roomType;

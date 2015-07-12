@@ -1,0 +1,1 @@
+CREATE TABLE roomType (id INTEGER PRIMARY KEY, createdAt DATE NOT NULL, createdByUserId INTEGER NOT NULL, titleOfType VARCHAR(50), numberOfPlaces INTEGER NOT NULL, waterCloset BOOLEAN, shower BOOLEAN, airConditioner BOOLEAN, tv BOOLEAN, refrigerator BOOLEAN, description VARCHAR(150), linkToPhoto VARCHAR(50));

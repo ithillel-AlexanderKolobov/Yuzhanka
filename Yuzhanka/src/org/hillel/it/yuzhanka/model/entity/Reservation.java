@@ -16,7 +16,7 @@ public class Reservation extends BaseEntity{
 									// 20150417003
 	private int ownerId;
 	private float Cost;
-	private float Prapaid;
+	private float Prepaid;
 	/* 
 	 * нужно наверно ввести такую переменную, 
 	 * чтобы система могла проверить не нужно-ли снимать предзаказ

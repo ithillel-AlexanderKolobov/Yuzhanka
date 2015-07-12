@@ -18,7 +18,10 @@ String email = request.getParameter("email");
 
 user = service.findByEmail(email); 
 if(user == null){
-	System.out.println("You not exist noob!");
+	
+	user.setFirstName(request.getParameter("name"));
+	user.setLastName(request.getParameter("surname"));
+	service.save(user);
 }
 
 %>

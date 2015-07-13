@@ -8,19 +8,32 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<ul id="menu">
-		<li><a href="index.jsp">Главная</a></li>
-		<li><a href="allrooms.jsp">Все номера</a></li>
-		<li><a href="book.jsp">Забронировать</a></li>
-		<li><a href="contacts.jsp">Контакты</a></li>
-		<li><a href="login.jsp">Войти</a></li>
-	</ul>
-	<form method="post" align="center">
-		Логин <input type="text" name="name" placeholder="Ваш логин.."></br>
-		</br> Пароль<input type="text" name="password" placeholder="Ваш пароль"></br>
-		</br>
-		<button type="submit">Войти</button>
-		<a href="registation.jsp">Регистрация</a>
-	</form>
+	<%@include file="header.jsp"%>
+	<jsp:useBean id="userLogin"
+		class="org.hillel.it.yuzhanka.model.entity.User" scope="session" />
+	<jsp:useBean id="serviceLogin"
+		class="org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl"
+		scope="application" />
+	<%
+		userLogin = serviceLogin.findByEmail(request.getParameter("email"));
+		//	out.println(serviceLogin.findByEmail(request.getParameter("email")).getEmail());
+		//	out.println(userLogin.getPassword());
+		out.println(serviceLogin.findAll());
+		if (userLogin != null
+				&& userLogin.getPassword().equals(
+						request.getParameter("password"))) {
+			session.setAttribute("authorized", true);
+	%>
+	<jsp:forward page="index.jsp"></jsp:forward>
+	<%
+		} else {
+	%>
+	Неправильный логин или пароль!
+
+	<%
+		}
+	%>
+
+
 </body>
 </html>

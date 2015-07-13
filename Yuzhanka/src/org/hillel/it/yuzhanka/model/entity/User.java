@@ -25,12 +25,18 @@ public class User extends BaseEntity {
 	private String passportSerieAndNumber;
 	private String passportWhereAndWhenHanded;
 	private ArrayList<Payment> payments;
+	private boolean admin;
 
-	
-	public User(String email, String password, String lastName,
-			String firstName, String patronymic, Date dateOfBirdh,
-			String homeAddress, String passportSerieAndNumber,
-			String passportWhereAndWhenHanded) {
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
+	public User(String email, String password, String lastName, String firstName, String patronymic, Date dateOfBirdh,
+			String homeAddress, String passportSerieAndNumber, String passportWhereAndWhenHanded) {
 
 		this.email = email;
 		this.password = password;
@@ -43,70 +49,96 @@ public class User extends BaseEntity {
 		this.passportWhereAndWhenHanded = passportWhereAndWhenHanded;
 		payments = new ArrayList<>();
 	}
-	public User(){
+
+	public User() {
 		payments = new ArrayList<>();
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	public String getPatronymic() {
 		return patronymic;
 	}
+
 	public void setPatronymic(String patronymic) {
 		this.patronymic = patronymic;
 	}
+
 	public Date getDateOfBirdh() {
 		return dateOfBirdh;
 	}
+
 	public void setDateOfBirdh(Date dateOfBirdh) {
 		this.dateOfBirdh = dateOfBirdh;
 	}
+
 	public String getHomeAddress() {
 		return homeAddress;
 	}
+
 	public void setHomeAddress(String homeAddress) {
 		this.homeAddress = homeAddress;
 	}
+
 	public String getPassportSerieAndNumber() {
 		return passportSerieAndNumber;
 	}
+
 	public void setPassportSerieAndNumber(String passportSerieAndNumber) {
 		this.passportSerieAndNumber = passportSerieAndNumber;
 	}
+
 	public String getPassportWhereAndWhenHanded() {
 		return passportWhereAndWhenHanded;
 	}
+
 	public void setPassportWhereAndWhenHanded(String passportWhereAndWhenHanded) {
 		this.passportWhereAndWhenHanded = passportWhereAndWhenHanded;
 	}
+
 	public ArrayList<Payment> getPayments() {
 		return payments;
 	}
+
 	public void setPayments(ArrayList<Payment> payments) {
 		this.payments = payments;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", password=" + password
+				+ ", lastName=" + lastName + ", firstName=" + firstName + "]";
+	}
 	
 
 }

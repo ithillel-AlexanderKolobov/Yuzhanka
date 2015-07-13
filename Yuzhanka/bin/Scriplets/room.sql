@@ -1,0 +1,1 @@
+CREATE TABLE room (id INTEGER PRIMARY KEY, createdAt DATE NOT NULL, createdByUserId INTEGER NOT NULL, enabled BOOLEAN, roomNumber INTEGER, placesQuantity INTEGER, roomTypeId INTEGER);

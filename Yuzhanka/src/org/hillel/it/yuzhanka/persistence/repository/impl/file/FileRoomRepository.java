@@ -6,5 +6,10 @@ import org.hillel.it.yuzhanka.persistence.repository.RoomRepository;
 
 public class FileRoomRepository extends FileBaseRepository<Room> implements RoomRepository
 {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 }

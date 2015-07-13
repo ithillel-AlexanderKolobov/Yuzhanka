@@ -10,6 +10,11 @@ import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 public class FileReservationRepository extends FileBaseRepository<Reservation>
 		implements ReservationRepository {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public List<Reservation> findByOwnerId(int userId) {
 		List<Reservation> reservationsList = new ArrayList<>();
 		for (Reservation reservation : storage.values()) {

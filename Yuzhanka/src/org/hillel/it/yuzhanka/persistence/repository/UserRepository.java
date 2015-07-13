@@ -11,6 +11,7 @@ public interface UserRepository
 	User findById(int id);
 	List<User> findAll();
 	User findByEmail(String email);
+
 	
 
 }

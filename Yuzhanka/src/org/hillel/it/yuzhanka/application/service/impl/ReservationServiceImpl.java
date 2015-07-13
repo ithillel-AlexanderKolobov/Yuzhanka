@@ -7,8 +7,6 @@ import org.hillel.it.yuzhanka.application.service.ReservationService;
 import org.hillel.it.yuzhanka.model.entity.Reservation;
 import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
-import org.hillel.it.yuzhanka.persistence.repository.impl.inmemory.InMemoryReservationRepository;
-import org.omg.CORBA.RepositoryIdHelper;
 
 public class ReservationServiceImpl implements ReservationService
 {

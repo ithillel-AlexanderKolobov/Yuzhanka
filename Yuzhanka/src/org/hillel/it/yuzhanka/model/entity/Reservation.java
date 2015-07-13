@@ -10,8 +10,12 @@ import java.util.Date;
  */
 public class Reservation extends BaseEntity{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private boolean active;
-	private ArrayList<Integer> reservedRoomsIds;
+	private ArrayList<Room> reservedRooms;
 	private String orderClientFormat; // что-бы номер был красивый дата+номер
 									// 20150417003
 	private int ownerId;

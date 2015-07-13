@@ -13,7 +13,8 @@
 </head>
 <body>
 	<%@include file="header.jsp"%>
-
+	
+	
 	<h1 align="center">Самые низкие цены на побережье Затоки!</h1>
 	<p align="center">Картинка фона меняется - номера, виды</p>
 

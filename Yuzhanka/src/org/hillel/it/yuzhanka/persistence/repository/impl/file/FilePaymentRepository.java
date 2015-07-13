@@ -4,5 +4,10 @@ import org.hillel.it.yuzhanka.model.entity.Payment;
 import org.hillel.it.yuzhanka.persistence.repository.PaymentRepository;
 
 public class FilePaymentRepository extends FileBaseRepository<Payment> implements PaymentRepository {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 }

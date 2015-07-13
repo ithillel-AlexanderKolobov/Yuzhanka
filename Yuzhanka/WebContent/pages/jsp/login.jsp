@@ -15,14 +15,13 @@
 		class="org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl"
 		scope="application" />
 	<%
-		userLogin = serviceLogin.findByEmail(request.getParameter("email"));
-		//	out.println(serviceLogin.findByEmail(request.getParameter("email")).getEmail());
-		//	out.println(userLogin.getPassword());
-		out.println(serviceLogin.findAll());
+		userLogin = serviceLogin.findByEmail(request.getParameter("email"));		
+		out.println(serviceLogin.findAll());//для отладки
 		if (userLogin != null
 				&& userLogin.getPassword().equals(
-						request.getParameter("password"))) {
-			session.setAttribute("authorized", true);
+						request.getParameter("password"))) {			
+			session.setAttribute("name", userLogin.getFirstName());
+			out.println(userLogin.getFirstName());
 	%>
 	<jsp:forward page="index.jsp"></jsp:forward>
 	<%

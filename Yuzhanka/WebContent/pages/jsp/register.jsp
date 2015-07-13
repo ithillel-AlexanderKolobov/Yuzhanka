@@ -16,12 +16,12 @@
 		class="org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl"
 		scope="application" />
 	<jsp:useBean id="user" class="org.hillel.it.yuzhanka.model.entity.User"
-		scope="session" />
+		scope="request" />
 	<%
 	
 	//out.println(service.findAll().size());
 		if (request.getMethod().equalsIgnoreCase("post")) {
-			user.setEmail(request.getParameter("email"));
+			//user.setEmail(request.getParameter("email"));
 
 			if (service.findByEmail(request.getParameter("email")) != null) {
 				
@@ -86,7 +86,7 @@
 	</form>
 				
 				<% 
-			}
+			} else {
 
 			user.setFirstName(request.getParameter("name"));
 			user.setLastName(request.getParameter("surname"));
@@ -95,6 +95,7 @@
 			user.setEmail(request.getParameter("email"));
 			user.setHomeAddress(request.getParameter("country") + " " + request.getParameter("city") + " " + request.getParameter("adress")); 
 			service.save(user);
+			}
 
 		}
 		else

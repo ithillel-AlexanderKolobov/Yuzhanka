@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import org.hillel.it.yuzhanka.model.entity.BaseEntity;
 
-public abstract class FileBaseRepository<T extends BaseEntity> implements Serializable{
-		
+public abstract class FileBaseRepository<T extends BaseEntity> implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -17,15 +17,14 @@ public abstract class FileBaseRepository<T extends BaseEntity> implements Serial
 
 	public void save(T entytiObject) {
 		if (entytiObject.getId() == 0) {
-			entytiObject.setId(nextId);			
+			entytiObject.setId(nextId);
 			storage.put(nextId, entytiObject);
 			nextId++;
 		} else {
 			storage.replace(entytiObject.getId(), entytiObject);
-		}	
+		}
 		FileRepository.getInstance().serialize();
-		System.out.println(nextId);
-		
+
 	}
 
 	public void delete(T entytiObject) {
@@ -36,7 +35,7 @@ public abstract class FileBaseRepository<T extends BaseEntity> implements Serial
 	public T findById(int id) {
 		return storage.get(id);
 	}
-	
+
 	public List<T> findAll() {
 		return new ArrayList<>(storage.values());
 	}
@@ -48,8 +47,5 @@ public abstract class FileBaseRepository<T extends BaseEntity> implements Serial
 	public void setStorage(HashMap<Integer, T> storage) {
 		this.storage = storage;
 	}
-	
-	
-	
-	
+
 }

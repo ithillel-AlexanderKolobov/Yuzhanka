@@ -59,12 +59,13 @@ public class FileRepository {
 	public void deserialize() {
 		try (FileInputStream fis = new FileInputStream("filerepository.bin");
 				ObjectInputStream ois = new ObjectInputStream(fis)) {
+			System.out.println("тута есть файл");
 			paymentRepository.setStorage((HashMap<Integer, Payment>) ois.readObject());
 			reservationRepository.setStorage((HashMap<Integer, Reservation>) ois.readObject());
 			roomRepository.setStorage((HashMap<Integer, Room>) ois.readObject());
 			roomTypeRepository.setStorage((HashMap<Integer, RoomType>) ois.readObject());
 			userRepository.setStorage((HashMap<Integer, User>) ois.readObject());
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {		
 			System.out.println("тута");
 			paymentRepository.setStorage(new HashMap<Integer, Payment>());
 			reservationRepository.setStorage(new HashMap<Integer, Reservation>());

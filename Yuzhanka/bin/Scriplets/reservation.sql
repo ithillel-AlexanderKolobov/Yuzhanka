@@ -1,0 +1,1 @@
+CREATE TABLE reservation (id INTEGER PRIMARY KEY, createdAt DATE NOT NULL, createdByUserId INTEGER NOT NULL, active BOOLEAN, reservedRoomsIds INTEGER, UserId INTEGER, Cost FLOAT, Prepaid FLOAT, prepaided BOOLEAN, commentClient VARCHAR(150), commentManager VARCHAR(150), arrivalDateTime DATE, clientArrived BOOLEAN, departureDateTime DATE);

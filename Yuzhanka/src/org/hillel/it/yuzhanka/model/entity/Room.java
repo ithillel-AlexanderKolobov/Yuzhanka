@@ -8,6 +8,10 @@ package org.hillel.it.yuzhanka.model.entity;
 
 public class Room extends BaseEntity {
 
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 private boolean enabled;
 private int roomNumber;
 private int placesQuantity;

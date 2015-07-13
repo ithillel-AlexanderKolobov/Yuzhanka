@@ -13,6 +13,11 @@ import org.hillel.it.yuzhanka.model.enums.PaymentMethod;
 
 public class Payment extends BaseEntity{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private PaymentMethod paymentMethod;// 0 - наличные 1 - картой через интернет 2-картой на месте  3 - денежный перевод...
 	
 	private int amount;

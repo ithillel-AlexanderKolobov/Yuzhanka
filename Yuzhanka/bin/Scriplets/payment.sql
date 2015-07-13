@@ -1,0 +1,1 @@
+CREATE TABLE payment (id INTEGER PRIMARY KEY, createdAt DATE NOT NULL, createdByUserId INTEGER NOT NULL, paymentMethodId INTEGER, amount INTEGER, currencyId INTEGER, userId INTEGER);

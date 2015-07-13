@@ -1,13 +1,18 @@
 package org.hillel.it.yuzhanka.persistence.repository.impl.file;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.hillel.it.yuzhanka.model.entity.BaseEntity;
 
-public abstract class FileBaseRepository<T extends BaseEntity> {
+public abstract class FileBaseRepository<T extends BaseEntity> implements Serializable{
 		
-	protected HashMap<Integer, T> storage;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	protected HashMap<Integer, T> storage = new HashMap<>();
 	protected int nextId = 1;
 
 	public void save(T entytiObject) {

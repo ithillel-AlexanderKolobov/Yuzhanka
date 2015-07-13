@@ -4,10 +4,8 @@ import java.util.List;
 
 import org.hillel.it.yuzhanka.application.service.RoomTypeService;
 import org.hillel.it.yuzhanka.model.entity.RoomType;
-import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 import org.hillel.it.yuzhanka.persistence.repository.RoomTypeRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
-import org.hillel.it.yuzhanka.persistence.repository.impl.inmemory.InMemoryRoomTypeRepository;
 
 public class RoomTypeServiceImpl implements RoomTypeService {
 

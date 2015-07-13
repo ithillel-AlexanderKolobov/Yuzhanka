@@ -19,7 +19,7 @@
 		scope="session" />
 	<%
 	
-	out.println(service.findAll().size());
+	//out.println(service.findAll().size());
 		if (request.getMethod().equalsIgnoreCase("post")) {
 			user.setEmail(request.getParameter("email"));
 

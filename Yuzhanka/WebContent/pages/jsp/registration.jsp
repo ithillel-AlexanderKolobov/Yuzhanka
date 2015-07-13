@@ -7,18 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@page import="org.hillel.it.yuzhanka.application.service.impl.*" %>
-<%@page import="java.util.List" %>
-<jsp:useBean id="service" class="org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl" 
-scope="application"/>
-<jsp:useBean id="user" class="org.hillel.it.yuzhanka.model.entity.User" 
-scope="session"/>
+
 <%
-user.setEmail(request.getParameter("email"));
-user.setFirstName(request.getParameter("name"));
-user.setLastName(request.getParameter("surname"));
-user.setPassword(request.getParameter("password"));
-service.save(user);
 
 
 

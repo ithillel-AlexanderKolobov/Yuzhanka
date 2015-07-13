@@ -25,6 +25,15 @@ public class User extends BaseEntity {
 	private String passportSerieAndNumber;
 	private String passportWhereAndWhenHanded;
 	private ArrayList<Payment> payments;
+	private boolean admin;
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
 
 	public User(String email, String password, String lastName, String firstName, String patronymic, Date dateOfBirdh,
 			String homeAddress, String passportSerieAndNumber, String passportWhereAndWhenHanded) {
@@ -124,5 +133,12 @@ public class User extends BaseEntity {
 	public void setPayments(ArrayList<Payment> payments) {
 		this.payments = payments;
 	}
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", password=" + password
+				+ ", lastName=" + lastName + ", firstName=" + firstName + "]";
+	}
+	
 
 }

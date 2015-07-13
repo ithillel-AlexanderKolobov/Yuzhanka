@@ -48,14 +48,13 @@ public class FileRepository {
 	public void deserialize() {
 		try (FileInputStream fis = new FileInputStream("filerepository.bin");
 				ObjectInputStream ois = new ObjectInputStream(fis)) {
-			System.out.println("тута есть файл");
+			System.out.println("тута есть файлик");
 			paymentRepository = (FilePaymentRepository) ois.readObject();
 			reservationRepository = (FileReservationRepository) ois.readObject();
 			roomRepository = (FileRoomRepository) ois.readObject();
 			roomTypeRepository = (FileRoomTypeRepository) ois.readObject();
 			userRepository = (FileUserRepository) ois.readObject();
-		} catch (FileNotFoundException e) {
-			System.out.println("тута");
+		} catch (FileNotFoundException e) {			
 			paymentRepository = new FilePaymentRepository();
 			reservationRepository = new FileReservationRepository();
 			roomRepository = new FileRoomRepository();

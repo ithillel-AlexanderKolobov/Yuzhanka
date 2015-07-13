@@ -13,23 +13,23 @@ import org.hillel.it.yuzhanka.model.entity.User;
 public class Starter {
 
 	public static void main(String[] args) {
-	User user1 = new User();
-//		User user2 = new User();
-//		User user3 = new User();
-//		User user4 = new User();
-//	User user5 = new User();
-	//	user1.setFirstName("vasiliadi");
-//		user2.setFirstName("Alex");
-//		user3.setFirstName("Valentina");
-//		user4.setFirstName("Sergey");
-//		user5.setFirstName("igor");
+		User user1 = new User();
+		User user2 = new User();
+		User user3 = new User();
+		User user4 = new User();
+		User user5 = new User();
+		user1.setFirstName("rette");
+		user2.setFirstName("Alex");
+		user3.setFirstName("Valentina");
+		user4.setFirstName("Sergey");
+		user5.setFirstName("igor");
 
 		UserService users = new UserServiceImpl();
 		users.save(user1);
-//		users.save(user2);
-//		users.save(user3);
-//		users.save(user4);
-//		users.save(user5);
+		users.save(user2);
+		users.save(user3);
+		users.save(user4);
+		users.save(user5);
 
 		List<User> usersFromFile = users.findAll();
 		if (usersFromFile.size() > 0) {
@@ -44,7 +44,6 @@ public class Starter {
 //			users.save(user4);
 //			users.save(user5);
 		}
-		
 
 	}
 

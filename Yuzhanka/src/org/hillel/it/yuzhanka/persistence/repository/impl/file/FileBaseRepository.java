@@ -24,6 +24,7 @@ public abstract class FileBaseRepository<T extends BaseEntity> implements Serial
 			storage.replace(entytiObject.getId(), entytiObject);
 		}	
 		FileRepository.getInstance().serialize();
+		System.out.println(nextId);
 		
 	}
 

@@ -5,12 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<div class="footer">
-		<p>Прокект Южанка разработан гениями web-программирования в
-			учебном центре Hillel. 2015г</p>
-	</div>
 
+	<%@include file="header.jsp"%>
+	
+		<select name="roomtypes">
+		<% for(RoomType  currentRoomType : roomTypeService.findAll() )
+		{%>
+			<option value="<%currentRoomType.getTitleOfType();%>"> <%= currentRoomType.getTitleOfType()%></option>
+		<%}%>
+		</select>
+	 
+	
 </body>
 </html>

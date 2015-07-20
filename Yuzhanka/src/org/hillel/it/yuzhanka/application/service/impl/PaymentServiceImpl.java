@@ -10,7 +10,12 @@ import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
 
 public class PaymentServiceImpl implements PaymentService {
 	//PaymentRepository repository = new InMemoryPaymentRepository();
-	PaymentRepository repository = FileRepository.getInstance().getPaymentRepository();
+	PaymentRepository repository;
+	
+
+	public PaymentServiceImpl() {
+		repository = FileRepository.getInstance().getPaymentRepository();
+	}
 
 	@Override
 	public void save(Payment payment) {

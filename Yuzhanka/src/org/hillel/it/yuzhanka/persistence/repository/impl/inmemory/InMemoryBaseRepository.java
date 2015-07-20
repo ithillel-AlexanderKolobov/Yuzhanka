@@ -1,5 +1,6 @@
 package org.hillel.it.yuzhanka.persistence.repository.impl.inmemory;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,7 +8,11 @@ import java.util.Map;
 
 import org.hillel.it.yuzhanka.model.entity.BaseEntity;
 
-public class InMemoryBaseRepository<T extends BaseEntity> {
+public class InMemoryBaseRepository<T extends BaseEntity> implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected Map<Integer, T> storage = new HashMap<>();
 	protected int nextId = 1;
 

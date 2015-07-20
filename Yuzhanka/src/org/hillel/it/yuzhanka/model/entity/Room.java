@@ -14,7 +14,7 @@ public class Room extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 private boolean enabled;
 private int roomNumber;
-private int placesQuantity;
+
 private RoomType roomType;
 
 private String linkToPhoto1;
@@ -37,12 +37,7 @@ public int getRoomNumber() {
 public void setRoomNumber(int roomNumber) {
 	this.roomNumber = roomNumber;
 }
-public int getPlacesQuantity() {
-	return placesQuantity;
-}
-public void setPlacesQuantity(int placesQuantity) {
-	this.placesQuantity = placesQuantity;
-}
+
 public RoomType getRoomType() {
 	return roomType;
 }

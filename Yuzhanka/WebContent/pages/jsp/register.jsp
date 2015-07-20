@@ -12,11 +12,7 @@
 	<%@include file="header.jsp"%>
 	<%@page import="org.hillel.it.yuzhanka.application.service.impl.*"%>
 	<%@page import="java.util.List"%>
-	<jsp:useBean id="service"
-		class="org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl"
-		scope="application" />
-	<jsp:useBean id="user" class="org.hillel.it.yuzhanka.model.entity.User"
-		scope="request" />
+	
 	<%
 	
 	//out.println(service.findAll().size());

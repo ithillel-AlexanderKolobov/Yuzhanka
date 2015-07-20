@@ -3,11 +3,8 @@ package org.hillel.it.yuzhanka.starter;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hillel.it.yuzhanka.application.service.PaymentService;
 import org.hillel.it.yuzhanka.application.service.UserService;
-import org.hillel.it.yuzhanka.application.service.impl.PaymentServiceImpl;
 import org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl;
-import org.hillel.it.yuzhanka.model.entity.Payment;
 import org.hillel.it.yuzhanka.model.entity.User;
 
 public class Starter {
@@ -30,6 +27,7 @@ public class Starter {
 		users.save(user3);
 		users.save(user4);
 		users.save(user5);
+		
 
 		List<User> usersFromFile = users.findAll();
 		if (usersFromFile.size() > 0) {
@@ -38,11 +36,11 @@ public class Starter {
 			}
 		} else {
 			System.out.println("No Users in file");
-//			users.save(user1);
-//			users.save(user2);
-//			users.save(user3);
-//			users.save(user4);
-//			users.save(user5);
+			users.save(user1);
+			users.save(user2);
+			users.save(user3);
+			users.save(user4);
+			users.save(user5);
 		}
 
 	}

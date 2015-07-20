@@ -26,6 +26,15 @@ public class User extends BaseEntity {
 	private String passportWhereAndWhenHanded;
 	private ArrayList<Payment> payments;
 	private boolean admin;
+	private boolean active;
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
 
 	public boolean isAdmin() {
 		return admin;

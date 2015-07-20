@@ -7,41 +7,65 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-form {float:right;}
+form {
+	float: right;
+}
 </style>
 
 
 </head>
-<body>
-<jsp:useBean id="userHeader"
+<body><jsp:useBean id="user"
 		class="org.hillel.it.yuzhanka.model.entity.User" scope="session" />
+	<jsp:useBean id="service"
+		class="org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl"
+		scope="application" />
+		
+	<jsp:useBean id="roomTypeService"
+		class="org.hillel.it.yuzhanka.application.service.impl.RoomTypeServiceImpl"
+		scope="application" />
+		
+		<%@page import="org.hillel.it.yuzhanka.model.enums.*"%>
+		<%@page import="org.hillel.it.yuzhanka.model.entity.*"%>
+		<%@page import="java.util.ArrayList"%> 
+
 
 	<ul id="menu">
 		<li><a href="index.jsp">Главная</a></li>
 		<li><a href="allrooms.jsp">Все номера</a></li>
 		<li><a href="book.jsp">Забронировать</a></li>
 		<li><a href="contacts.jsp">Контакты</a></li>
+		<%
+			if (user != null && !user.isAdmin()) {//сделать user.isAdmin()
+		%>
+		<li><a href="rooms.jsp">Комнаты</a></li>
+		<li><a href="users.jsp">Пользователи</a></li>
+		<li><a href="reservations.jsp">Резервы</a></li>
+		<%
+			}
+		%>
 
 	</ul>
 	<br>
-	
+
 	<%
-		
-		if(session.getAttribute("name") == null)	
-		{
+		if (user.getEmail() == null) {
 	%>
 	<form method="post" align="right" action="login.jsp">
-		Логин <input type="text" name="email" placeholder="Ваш email.." size="10">
-		Пароль<input type="text" name="password" placeholder="Ваш пароль" size="10">
-		<button type="submit" >Войти</button>
+		Логин <input type="text" name="email" placeholder="Ваш email.."
+			size="10"> Пароль<input type="text" name="password"
+			placeholder="Ваш пароль" size="10">
+		<button type="submit">Войти</button>
 		<a href="register.jsp">Регистрация</a>
-		
+
 	</form>
-	<%}
-	else
-	{%>
-	Здравствуй, 
-	<% out.println(session.getAttribute("name"));} %>
+	<%
+		} else {
+	%>
+	Здравствуй,
+	<% 
+		out.println(user.getFirstName());
+		}
+	%>
 
 </body>
 </html>

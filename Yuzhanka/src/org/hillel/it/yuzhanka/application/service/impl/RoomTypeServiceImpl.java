@@ -10,7 +10,13 @@ import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
 public class RoomTypeServiceImpl implements RoomTypeService {
 
 	//RoomTypeRepository repository = new InMemoryRoomTypeRepository();
-	RoomTypeRepository repository = FileRepository.getInstance().getRoomTypeRepository();
+	RoomTypeRepository repository;
+	
+	
+
+	public RoomTypeServiceImpl() {
+		repository = FileRepository.getInstance().getRoomTypeRepository();
+	}
 
 	@Override
 	public void save(RoomType roomType) {

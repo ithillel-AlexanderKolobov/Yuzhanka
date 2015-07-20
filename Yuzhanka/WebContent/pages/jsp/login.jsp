@@ -9,23 +9,18 @@
 </head>
 <body>
 	<%@include file="header.jsp"%>
-	<jsp:useBean id="userLogin"
-		class="org.hillel.it.yuzhanka.model.entity.User" scope="session" />
-	<jsp:useBean id="serviceLogin"
-		class="org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl"
-		scope="application" />
+
 	<%
-		userLogin = serviceLogin.findByEmail(request.getParameter("email"));		
-		out.println(serviceLogin.findAll());//для отладки
-		if (userLogin != null
-				&& userLogin.getPassword().equals(
-						request.getParameter("password"))) {			
-			session.setAttribute("name", userLogin.getFirstName());
-			out.println(userLogin.getFirstName());
+		user = service.findByEmail(request.getParameter("email"));
+		out.println(service.findAll());//для отладки
+
+		if (user != null && user.getPassword().equals(request.getParameter("password"))) {
+			//session.setAttribute("user", user);
 	%>
 	<jsp:forward page="index.jsp"></jsp:forward>
 	<%
 		} else {
+			user = null;
 	%>
 	Неправильный логин или пароль!
 

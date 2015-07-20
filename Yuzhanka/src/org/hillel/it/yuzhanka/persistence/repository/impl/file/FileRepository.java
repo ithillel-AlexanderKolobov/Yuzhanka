@@ -19,9 +19,9 @@ public class FileRepository {
 		deserialize();
 	}
 
-	protected FileRepository(int number) {
+	//protected FileRepository(int number) {
 
-	}
+	//}
 
 	public static FileRepository getInstance() {
 		if (instance == null) {

@@ -11,7 +11,12 @@ import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
 public class ReservationServiceImpl implements ReservationService
 {
 	//ReservationRepository repository = new InMemoryReservationRepository();
-	ReservationRepository repository = FileRepository.getInstance().getReservationRepository();
+	ReservationRepository repository;
+	
+
+	public ReservationServiceImpl() {
+		repository = FileRepository.getInstance().getReservationRepository();
+	}
 
 	@Override
 	public void save(Reservation reservation)

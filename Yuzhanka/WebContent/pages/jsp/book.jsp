@@ -12,6 +12,20 @@
 
 
 	<h1>Форма бронирования номера</h1>
+	<form method="post" action="book.jsp">
+	<select name="roomtypes">
+	<option value="alltypes">Все типы</option>
+		<% for(RoomType  currentRoomType : roomTypeService.findAll() )
+		{%>
+			<option value="<%=currentRoomType.getId()%>"<%if(request.getParameter("roomtype")!=null && request.getParameter("roomtype").equals(String.valueOf(currentRoomType.getId()))) 
+	{
+	out.print("selected");					
+	}	
+	%>> <%=currentRoomType.getTitleOfType()%></option>
+		<%}%>
+		</select>
+	
+	
 	
 	<%@include file="footer.jsp" %>
 

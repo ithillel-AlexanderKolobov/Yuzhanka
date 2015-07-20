@@ -11,12 +11,17 @@
 
 	<%@include file="header.jsp"%>
 	
+	<form method="post" action="addroom.jsp">
+	
 		<select name="roomtypes">
 		<% for(RoomType  currentRoomType : roomTypeService.findAll() )
 		{%>
-			<option value="<%currentRoomType.getTitleOfType();%>"> <%= currentRoomType.getTitleOfType()%></option>
+			<option value="<%=currentRoomType.getTitleOfType()%>"> <%= currentRoomType.getTitleOfType()%></option>
 		<%}%>
-		</select>
+		</select> <br><br>
+		<input type="text" name="roomnumber" placeholder="Номер комнаты...">
+		
+		</form>
 	 
 	
 </body>

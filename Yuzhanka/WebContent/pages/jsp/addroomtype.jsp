@@ -9,25 +9,37 @@
 </head>
 <body>
 	<%@include file="header.jsp"%>
-	<% if (request.getMethod().equalsIgnoreCase("post")) {
-		
-RoomType roomType = new RoomType(); 
-roomType.setTitleOfType(request.getParameter("roomtype"));
-ArrayList<Amenity> amenities = new ArrayList<>();
-for(int i = 0; i < Amenity.values().length; i++) 
-{
-	if(request.getParameter( Amenity.values()[i].getName()) != null )
-	{
-		amenities.add(Amenity.values()[i]);
-		 
-	}
-}
-roomType.setAmenities(amenities); 
+	<%
+		Amenity[] amentity = Amenity.values();
+		if (request.getMethod().equalsIgnoreCase("post")) {
 
-roomTypeService.save(roomType);%>
-<jsp:forward page="rooms.jsp"></jsp:forward>
+			RoomType roomType = new RoomType();
+			roomType.setTitleOfType(request.getParameter("roomtype"));
+			ArrayList<Amenity> amenities = new ArrayList<>();
 
- <% } %>
+			for (int i = 0; i < amentity.length; i++) {
+				if (request.getParameter(amentity[i].toString()) != null
+						&& request.getParameter(amentity[i].toString()).equalsIgnoreCase("on")) {
+
+					amenities.add(amentity[i]);
+
+				}
+			}
+			roomType.setLinkToPhoto1(request.getParameter("url1"));
+			roomType.setLinkToPhoto2(request.getParameter("url2"));
+			roomType.setLinkToPhoto3(request.getParameter("url3"));
+			roomType.setLinkToPhoto4(request.getParameter("url4"));
+			roomType.setLinkToPhoto5(request.getParameter("url5"));
+
+			roomType.setAmenities(amenities);
+
+			roomTypeService.save(roomType);
+	%>
+	<jsp:forward page="rooms.jsp"></jsp:forward>
+
+	<%
+		}
+	%>
 
 	<form method="post" align="left" action="addroomtype.jsp">
 
@@ -35,20 +47,31 @@ roomTypeService.save(roomType);%>
 			placeholder="Тип комнаты..." size="30">
 
 
-		<% for(int i = 0; i < Amenity.values().length; i++) 
-	{ %>
+		<%
+			for (int i = 0; i < amentity.length; i++) {
+		%>
 
 		<p>
-			<input type="checkbox" name="amenity"
-				value="<% Amenity.values()[i].getName();%>">
-			<%= Amenity.values()[i].getName() %>
+			<input type="checkbox" name="<%=amentity[i].toString()%>">
+			<%=amentity[i].getName()%>
 		</p>
 
-		<%} %>
+		<%
+			}
+		%>
+		<input type="text" name="numberofplaces" pattern="^[ 0-9]+$" > 
+
+		<input type="text" name="url1"> <input type="text" name="url2">
+		<input type="text" name="url3"> <input type="text" name="url4">
+		<input type="text" name="url5">
+		<br> <br>
+		Кол-во спальных мест &nbsp&nbsp  <input type="text" name="numberofplaces" pattern="^[ 0-9]+$" size="1px" > 
+		 <br>  <br>
+
 
 		<button type="submit" value="save">Сохранить</button>
 	</form>
-	
+
 
 
 

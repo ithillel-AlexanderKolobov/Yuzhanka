@@ -17,14 +17,6 @@ private int roomNumber;
 
 private RoomType roomType;
 
-private String linkToPhoto1;
-private String linkToPhoto2;
-private String linkToPhoto3;
-private String linkToPhoto4; 
-private String linkToPhoto5; 
-private String linkToPhoto6;
-private String linkToPhoto7;
-private String linkToPhoto8;
 public boolean isEnabled() {
 	return enabled;
 }

@@ -8,26 +8,34 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<%@include file="header.jsp" %>
+	<%@include file="header.jsp"%>
 
 
 	<h1>Форма бронирования номера</h1>
+	
+	
 	<form method="post" action="book.jsp">
-	<select name="roomtypes">
-	<option value="alltypes">Все типы</option>
-		<% for(RoomType  currentRoomType : roomTypeService.findAll() )
-		{%>
-			<option value="<%=currentRoomType.getId()%>"<%if(request.getParameter("roomtype")!=null && request.getParameter("roomtype").equals(String.valueOf(currentRoomType.getId()))) 
-	{
-	out.print("selected");					
-	}	
-	%>> <%=currentRoomType.getTitleOfType()%></option>
-		<%}%>
+		<p>Выберите тип комнаты<select name="roomtypes">
+			<option value="alltypes">Все типы</option>
+			<%
+				for (RoomType currentRoomType : roomTypeService.findAll()) {
+			%>
+			<option value="<%=currentRoomType.getId()%>"
+				<%if (request.getParameter("roomtype") != null
+						&& request.getParameter("roomtype").equals(String.valueOf(currentRoomType.getId()))) {
+					out.print("selected");
+				}%>>
+				<%=currentRoomType.getTitleOfType()%></option>
+			<%
+				}
+			%>
 		</select>
-	
-	
-	
-	<%@include file="footer.jsp" %>
 
+<p>Выберите дату заезда:<input type="date" name="startdate">Выберите дату отъезда<input type="date" name="enddate"></p>
+<p> <button type="submit" value="show">Показать</button></p>
+</form>
+
+
+		<%@include file="footer.jsp"%>
 </body>
 </html>

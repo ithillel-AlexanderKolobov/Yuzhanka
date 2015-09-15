@@ -1,5 +1,10 @@
 package org.hillel.it.yuzhanka.persistence.repository.impl.sql;
 
-public class JDBCConnector {
+import java.sql.Connection;
 
+public class JDBCConnector {
+	private static Connection getDBConnection() {
+	    
+	    return null;
+	}
 }

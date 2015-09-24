@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.hillel.it.yuzhanka.model.entity.Reservation;
+import org.hillel.it.yuzhanka.model.entity.User;
 import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 
 public class FileReservationRepository extends FileBaseRepository<Reservation>
@@ -15,10 +16,10 @@ public class FileReservationRepository extends FileBaseRepository<Reservation>
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public List<Reservation> findByOwnerId(int userId) {
+	public List<Reservation> findByOwner(User user) {
 		List<Reservation> reservationsList = new ArrayList<>();
 		for (Reservation reservation : storage.values()) {
-			if (reservation.getOwner() == userId) {
+			if (reservation.getOwner().equals(user)) {
 				reservationsList.add(reservation);
 			}
 		}

@@ -50,6 +50,11 @@ public class Reservation extends BaseEntity {
 	private boolean clientArrived;
 	private Date departureDateTime;
 
+	public Reservation() {
+		super();
+		
+	}
+
 	public Date getArrivalDateTime() {
 		return arrivalDateTime;
 	}

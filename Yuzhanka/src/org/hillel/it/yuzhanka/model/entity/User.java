@@ -39,20 +39,8 @@ public class User extends BaseEntity {
 	private boolean admin;
 	private boolean active;
 
-	public boolean isActive() {
-		return active;
-	}
+	public User() {
 
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
-	public boolean isAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
 	}
 
 	public User(String email, String password, String lastName, String firstName, String patronymic, Date dateOfBirdh,
@@ -70,84 +58,96 @@ public class User extends BaseEntity {
 
 	}
 
-	public User() {
-
+	public Date getDateOfBirdh() {
+		return dateOfBirdh;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
 	public String getFirstName() {
 		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getPatronymic() {
-		return patronymic;
-	}
-
-	public void setPatronymic(String patronymic) {
-		this.patronymic = patronymic;
-	}
-
-	public Date getDateOfBirdh() {
-		return dateOfBirdh;
-	}
-
-	public void setDateOfBirdh(Date dateOfBirdh) {
-		this.dateOfBirdh = dateOfBirdh;
 	}
 
 	public String getHomeAddress() {
 		return homeAddress;
 	}
 
-	public void setHomeAddress(String homeAddress) {
-		this.homeAddress = homeAddress;
+	public String getLastName() {
+		return lastName;
 	}
 
 	public String getPassportSerieAndNumber() {
 		return passportSerieAndNumber;
 	}
 
-	public void setPassportSerieAndNumber(String passportSerieAndNumber) {
-		this.passportSerieAndNumber = passportSerieAndNumber;
-	}
-
 	public String getPassportWhereAndWhenHanded() {
 		return passportWhereAndWhenHanded;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getPatronymic() {
+		return patronymic;
+	}
+
+	public List<Payment> getPayments() {
+		return payments;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
+	public void setDateOfBirdh(Date dateOfBirdh) {
+		this.dateOfBirdh = dateOfBirdh;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setHomeAddress(String homeAddress) {
+		this.homeAddress = homeAddress;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setPassportSerieAndNumber(String passportSerieAndNumber) {
+		this.passportSerieAndNumber = passportSerieAndNumber;
 	}
 
 	public void setPassportWhereAndWhenHanded(String passportWhereAndWhenHanded) {
 		this.passportWhereAndWhenHanded = passportWhereAndWhenHanded;
 	}
 
-	public List<Payment> getPayments() {
-		return payments;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setPatronymic(String patronymic) {
+		this.patronymic = patronymic;
 	}
 
 	public void setPayments(List<Payment> payments) {

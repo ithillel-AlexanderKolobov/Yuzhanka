@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.hillel.it.yuzhanka.model.entity.Reservation;
+import org.hillel.it.yuzhanka.model.entity.User;
 
 public interface ReservationRepository {
 	void save(Reservation reservation);
@@ -14,7 +15,7 @@ public interface ReservationRepository {
 	// newReservation);
 	Reservation findById(int id);
 
-	List<Reservation> findByOwnerId(int userId);
+	List<Reservation> findByOwner(User user);
 
 	Reservation findByOrderClientFormat(String orderClientFormat);
 

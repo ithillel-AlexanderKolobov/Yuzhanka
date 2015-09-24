@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hillel.it.yuzhanka.application.service.ReservationService;
 import org.hillel.it.yuzhanka.model.entity.Reservation;
+import org.hillel.it.yuzhanka.model.entity.User;
 import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
 
@@ -39,10 +40,10 @@ public class ReservationServiceImpl implements ReservationService
 	}
 
 	@Override
-	public List<Reservation> findByOwnerId(int userId) 
+	public List<Reservation> findByOwner(User user) 
 	{
 		
-		return repository.findByOwnerId(userId);
+		return repository.findByOwner(user);
 	}
 
 	@Override

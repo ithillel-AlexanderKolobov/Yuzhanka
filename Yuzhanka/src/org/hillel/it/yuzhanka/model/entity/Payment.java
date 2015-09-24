@@ -28,13 +28,14 @@ public class Payment extends BaseEntity{
 	
 	private Currency currencyId;// 0-uah 1-usd 2-eur
 	@ManyToOne
-	private User client;//как назвать?
+	private User client;
 	
+			
 	
-	
-	
-		
-	
+	public Payment(){
+		super();
+	}
+
 	public Payment(PaymentMethod paymentMathod, int amount,
 			Currency currencyId, User client) {
 		this.paymentMethod = paymentMathod;
@@ -43,44 +44,40 @@ public class Payment extends BaseEntity{
 		this.client = client;
 	}
 
-	public Payment(){
-		
-	}
-
 	public int getAmount() {
 		return amount;
 	}
 
 	
 
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-
 	public User getClient() {
 		return client;
-	}
-
-	public void setClient(User client) {
-		this.client = client;
-	}
-
-	
-	
-	public PaymentMethod getPaymentMathod() {
-		return paymentMethod;
-	}
-
-	public void setPaymentMathod(PaymentMethod paymentMathod) {
-		this.paymentMethod = paymentMathod;
 	}
 
 	public Currency getCurrencyId() {
 		return currencyId;
 	}
 
+	public PaymentMethod getPaymentMathod() {
+		return paymentMethod;
+	}
+
+	
+	
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public void setClient(User client) {
+		this.client = client;
+	}
+
 	public void setCurrencyId(Currency currencyId) {
 		this.currencyId = currencyId;
+	}
+
+	public void setPaymentMathod(PaymentMethod paymentMathod) {
+		this.paymentMethod = paymentMathod;
 	}
 
 	

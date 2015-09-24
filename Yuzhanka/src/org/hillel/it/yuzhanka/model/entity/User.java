@@ -1,7 +1,13 @@
 package org.hillel.it.yuzhanka.model.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * Entity ithat represent user of the application
@@ -9,6 +15,8 @@ import java.util.Date;
  * @author Лаборант
  *
  */
+@Entity
+@Table(name = "user")
 public class User extends BaseEntity {
 
 	private String email; // обязательное поле. Должно сохранять уникальность.
@@ -24,7 +32,10 @@ public class User extends BaseEntity {
 	private String homeAddress;
 	private String passportSerieAndNumber;
 	private String passportWhereAndWhenHanded;
-	private ArrayList<Payment> payments;
+	@OneToMany (mappedBy="client")
+	private List<Payment> payments;
+	@OneToMany (mappedBy="owner")
+	private List<Reservation> reservations;
 	private boolean admin;
 	private boolean active;
 
@@ -56,11 +67,11 @@ public class User extends BaseEntity {
 		this.homeAddress = homeAddress;
 		this.passportSerieAndNumber = passportSerieAndNumber;
 		this.passportWhereAndWhenHanded = passportWhereAndWhenHanded;
-		payments = new ArrayList<>();
+
 	}
 
 	public User() {
-		payments = new ArrayList<>();
+
 	}
 
 	public String getEmail() {
@@ -135,19 +146,18 @@ public class User extends BaseEntity {
 		this.passportWhereAndWhenHanded = passportWhereAndWhenHanded;
 	}
 
-	public ArrayList<Payment> getPayments() {
+	public List<Payment> getPayments() {
 		return payments;
 	}
 
-	public void setPayments(ArrayList<Payment> payments) {
+	public void setPayments(List<Payment> payments) {
 		this.payments = payments;
 	}
 
 	@Override
 	public String toString() {
-		return "User [email=" + email + ", password=" + password
-				+ ", lastName=" + lastName + ", firstName=" + firstName + "]";
+		return "User [email=" + email + ", password=" + password + ", lastName=" + lastName + ", firstName=" + firstName
+				+ "]";
 	}
-	
 
 }

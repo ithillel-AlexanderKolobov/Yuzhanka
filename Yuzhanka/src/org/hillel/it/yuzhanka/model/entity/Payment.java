@@ -2,6 +2,10 @@ package org.hillel.it.yuzhanka.model.entity;
 
 
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
+
 import org.hillel.it.yuzhanka.model.enums.Currency;
 import org.hillel.it.yuzhanka.model.enums.PaymentMethod;
 
@@ -10,7 +14,7 @@ import org.hillel.it.yuzhanka.model.enums.PaymentMethod;
  * @author Лаборант
  *
  */
-
+@Entity
 public class Payment extends BaseEntity{
 	
 	/**
@@ -23,7 +27,7 @@ public class Payment extends BaseEntity{
 	private int amount;
 	
 	private Currency currencyId;// 0-uah 1-usd 2-eur
-	
+	@ManyToOne
 	private User client;//как назвать?
 	
 	

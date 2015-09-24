@@ -2,6 +2,9 @@ package org.hillel.it.yuzhanka.model.entity;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.hillel.it.yuzhanka.model.enums.Amenity;
 
 /**
@@ -10,7 +13,8 @@ import org.hillel.it.yuzhanka.model.enums.Amenity;
  * @author Лаборант
  *
  */
-
+@Entity
+//@Table(name="room_types")
 public class RoomType extends BaseEntity {
 
 	/**
@@ -24,7 +28,7 @@ public class RoomType extends BaseEntity {
 	// private boolean airConditioner;
 	// private boolean tv;
 	// private boolean refrigerator;
-	private List<Amenity> amenities;
+	//private List<Amenity> amenities; РАСКОМЕНТИРОВАТЬ
 	private String description; // Будет хранить статью с описанием.Возможно
 	// стоит вынести в отдельный тип.
 	private String linkToPhoto1;

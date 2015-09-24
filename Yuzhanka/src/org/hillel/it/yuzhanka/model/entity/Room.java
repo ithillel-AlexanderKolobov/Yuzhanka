@@ -1,11 +1,17 @@
 package org.hillel.it.yuzhanka.model.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 /**
  * Show availability of the room
  * @author Лаборант
  *
  */
-
+@Entity
+//@Table(name="room")
 public class Room extends BaseEntity {
 
 /**
@@ -14,7 +20,7 @@ public class Room extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 private boolean enabled;
 private int roomNumber;
-
+@ManyToOne
 private RoomType roomType;
 
 public boolean isEnabled() {

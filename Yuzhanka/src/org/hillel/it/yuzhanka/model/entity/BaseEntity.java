@@ -3,14 +3,20 @@ package org.hillel.it.yuzhanka.model.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
+
 /**
  * Base class for all business entities
  * 
  * @author Лаборант
  *
  */
+@MappedSuperclass
 public abstract class BaseEntity implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -19,6 +25,7 @@ public abstract class BaseEntity implements Serializable {
 	/**
 	 * Unique entity identifier
 	 */
+	@Id
 	protected int id;
 
 	/**
@@ -29,6 +36,7 @@ public abstract class BaseEntity implements Serializable {
 	/**
 	 * Person who created specific entity
 	 */
+	@ManyToOne
 	protected User createdBy;
 
 	public int getId() {

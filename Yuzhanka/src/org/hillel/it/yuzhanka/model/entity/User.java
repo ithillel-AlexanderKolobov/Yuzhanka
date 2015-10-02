@@ -16,9 +16,12 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "user")
 public class User extends BaseEntity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String email; // об€зательное поле. ƒолжно сохран€ть уникальность.
 							// Ѕудет использоватьс€ дл€ авторизации
 	private String password; // скорее всего HASH а не сам пароль. ≈сли человек

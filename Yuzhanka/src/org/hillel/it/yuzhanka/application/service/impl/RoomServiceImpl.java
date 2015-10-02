@@ -6,6 +6,7 @@ import org.hillel.it.yuzhanka.application.service.RoomService;
 import org.hillel.it.yuzhanka.model.entity.Room;
 import org.hillel.it.yuzhanka.persistence.repository.RoomRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
+import org.hillel.it.yuzhanka.persistence.repository.impl.hibernate.HibernateRoomRepository;
 
 public class RoomServiceImpl implements RoomService {
 
@@ -14,7 +15,7 @@ public class RoomServiceImpl implements RoomService {
 	RoomRepository repository;
 
 	public RoomServiceImpl() {
-		repository = FileRepository.getInstance().getRoomRepository();
+		repository = new HibernateRoomRepository();
 	}
 
 	@Override

@@ -3,20 +3,25 @@ package org.hillel.it.yuzhanka.application.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
 import org.hillel.it.yuzhanka.application.service.ReservationService;
 import org.hillel.it.yuzhanka.model.entity.Reservation;
 import org.hillel.it.yuzhanka.model.entity.User;
 import org.hillel.it.yuzhanka.persistence.repository.ReservationRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
+import org.hillel.it.yuzhanka.persistence.repository.impl.hibernate.HibernateReservationRepository;
+import org.hillel.it.yuzhanka.persistence.repository.impl.hibernate.HibernateUtil;
 
 public class ReservationServiceImpl implements ReservationService
 {
+	
+	
 	//ReservationRepository repository = new InMemoryReservationRepository();
 	ReservationRepository repository;
 	
 
 	public ReservationServiceImpl() {
-		repository = FileRepository.getInstance().getReservationRepository();
+		repository = new HibernateReservationRepository();
 	}
 
 	@Override

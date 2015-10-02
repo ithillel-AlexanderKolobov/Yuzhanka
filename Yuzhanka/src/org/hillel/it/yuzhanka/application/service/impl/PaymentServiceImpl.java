@@ -6,6 +6,7 @@ import org.hillel.it.yuzhanka.application.service.PaymentService;
 import org.hillel.it.yuzhanka.model.entity.Payment;
 import org.hillel.it.yuzhanka.persistence.repository.PaymentRepository;
 import org.hillel.it.yuzhanka.persistence.repository.impl.file.FileRepository;
+import org.hillel.it.yuzhanka.persistence.repository.impl.hibernate.HibernatePaymentRepository;
 
 
 public class PaymentServiceImpl implements PaymentService {
@@ -14,7 +15,7 @@ public class PaymentServiceImpl implements PaymentService {
 	
 
 	public PaymentServiceImpl() {
-		repository = FileRepository.getInstance().getPaymentRepository();
+		repository = new HibernatePaymentRepository();
 	}
 
 	@Override

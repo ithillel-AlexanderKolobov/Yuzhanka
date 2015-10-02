@@ -10,13 +10,14 @@
    <property name="hibernate.connection.username">root</property>
    <property name="hibernate.connection.password">root</property>
    <property name="show_sql">true</property>
-   <property name="hbm2ddl.auto">update</property>
+   <!--  <property name="hbm2ddl.auto">create</property>-->
    
    <mapping class="org.hillel.it.yuzhanka.model.entity.User" />
    <mapping class="org.hillel.it.yuzhanka.model.entity.Payment" />
    <mapping class="org.hillel.it.yuzhanka.model.entity.Reservation" />
    <mapping class="org.hillel.it.yuzhanka.model.entity.Room" />
    <mapping class="org.hillel.it.yuzhanka.model.entity.RoomType" />
+   <mapping class="org.hillel.it.yuzhanka.model.entity.Amenity" />
 
 
 </session-factory>

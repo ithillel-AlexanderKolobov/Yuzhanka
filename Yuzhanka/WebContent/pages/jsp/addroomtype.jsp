@@ -10,18 +10,18 @@
 <body>
 	<%@include file="header.jsp"%>
 	<%
-		Amenity[] amentity = Amenity.values();
+	ArrayList<Amenity> allAmenities = new ArrayList<>(amenityService.findAll());
 		if (request.getMethod().equalsIgnoreCase("post")) {
 
 			RoomType roomType = new RoomType();
 			roomType.setTitleOfType(request.getParameter("roomtype"));
 			ArrayList<Amenity> amenities = new ArrayList<>();
 
-			for (int i = 0; i < amentity.length; i++) {
-				if (request.getParameter(amentity[i].toString()) != null
-						&& request.getParameter(amentity[i].toString()).equalsIgnoreCase("on")) {
+			for (int i = 0; i < allAmenities.size(); i++) {
+				if (request.getParameter(allAmenities.get(i).toString()) != null
+						&& request.getParameter(allAmenities.get(i).toString()).equalsIgnoreCase("on")) {
 
-					amenities.add(amentity[i]);
+					amenities.add(allAmenities.get(i));
 
 				}
 			}
@@ -48,12 +48,12 @@
 
 
 		<%
-			for (int i = 0; i < amentity.length; i++) {
+			for (int i = 0; i < allAmenities.size(); i++) {
 		%>
 
 		<p>
-			<input type="checkbox" name="<%=amentity[i].toString()%>">
-			<%=amentity[i].getName()%>
+			<input type="checkbox" name="<%=allAmenities.get(i).toString()%>" value="on">
+			<%=allAmenities.get(i).getName()%>
 		</p>
 
 		<%

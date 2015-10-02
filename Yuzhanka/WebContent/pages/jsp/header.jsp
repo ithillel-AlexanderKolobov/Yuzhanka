@@ -19,14 +19,18 @@ form {
 	<jsp:useBean id="service"
 		class="org.hillel.it.yuzhanka.application.service.impl.UserServiceImpl"
 		scope="application" />
-		
+
 	<jsp:useBean id="roomTypeService"
 		class="org.hillel.it.yuzhanka.application.service.impl.RoomTypeServiceImpl"
 		scope="application" />
-		
-		<%@page import="org.hillel.it.yuzhanka.model.enums.*"%>
-		<%@page import="org.hillel.it.yuzhanka.model.entity.*"%>
-		<%@page import="java.util.ArrayList"%> 
+
+	<jsp:useBean id="amenityService"
+		class="org.hillel.it.yuzhanka.application.service.impl.AmenityServiceImpl"
+		scope="application" />
+
+
+	<%@page import="org.hillel.it.yuzhanka.model.entity.*"%>
+	<%@page import="java.util.ArrayList"%>
 
 
 	<ul id="menu">
@@ -62,7 +66,7 @@ form {
 		} else {
 	%>
 	Здравствуй,
-	<% 
+	<%
 		out.println(user.getFirstName());
 		}
 	%>
